@@ -1,0 +1,162 @@
+/* Pricing.css */
+.pricing {
+    padding: 80px 0;
+    background-color: white;
+    /* Clean white background like image */
+}
+
+/* Toggle Switch */
+.pricing-toggle-wrapper {
+    text-align: center;
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.pricing-toggle {
+    display: inline-flex;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+.pricing-toggle button {
+    padding: 10px 30px;
+    border: none;
+    background: transparent;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--color-text);
+}
+
+.pricing-toggle button.active {
+    background-color: #2C362B;
+    /* Dark background for active state */
+    color: white;
+}
+
+.save-text {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+}
+
+/* Grid Layout - Forced Horizontal */
+.pricing__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Exactly 3 columns */
+    gap: 2rem;
+    align-items: stretch;
+    /* Make cards same height */
+}
+
+@media (max-width: 1024px) {
+    .pricing__grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 cols on tablet */
+    }
+}
+
+@media (max-width: 768px) {
+    .pricing__grid {
+        grid-template-columns: 1fr;
+        /* 1 col on mobile */
+    }
+}
+
+/* Card Styling - Matching Inspiration */
+.pricing-card {
+    border-radius: 12px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    margin-bottom: 2rem;
+}
+
+.plan-name {
+    font-size: 1.8rem;
+    font-family: var(--font-body);
+    /* Clean sans-serif like image */
+    font-weight: 600;
+    color: #1A1A1A;
+    margin-bottom: 0.5rem;
+}
+
+.plan-desc {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.plan-features-box {
+    flex-grow: 1;
+    margin-bottom: 2rem;
+}
+
+.plan-features-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.plan-features-box li {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    /* Subtle dividers */
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+.plan-features-box li:first-child {
+    background-color: rgba(0, 0, 0, 0.03);
+    /* Highlight first item like a box if needed, or keeping it clean */
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border: none;
+    padding: 1.5rem;
+}
+
+.card-footer {
+    margin-top: auto;
+}
+
+.plan-price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2C362B;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-body);
+}
+
+.period {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #666;
+}
+
+.btn-pricing {
+    width: 100%;
+    padding: 1rem;
+    color: #2C362B;
+    font-weight: 700;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: filter 0.3s;
+}
+
+.btn-pricing:hover {
+    filter: brightness(0.95);
+}

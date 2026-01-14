@@ -1,0 +1,138 @@
+/* HeroCarousel.css */
+.hero-carousel {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--color-bg);
+}
+
+.hero-carousel__slide {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@media (max-width: 900px) {
+    .hero-carousel__slide {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
+/* Content Side (Left) */
+.hero-content-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 4rem 0 10%;
+    background-color: var(--color-bg);
+    z-index: 2;
+}
+
+.hero-tag {
+    display: inline-block;
+    color: var(--color-secondary);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+}
+
+.hero-title {
+    color: var(--color-dark);
+    margin-bottom: 2rem;
+    line-height: 1.15;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--color-text-light);
+    margin-bottom: 3rem;
+    max-width: 500px;
+}
+
+/* Image Side (Right) */
+.hero-image-wrapper {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Create the Arch Shape Mask */
+.hero-image-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Subtle overlay if needed */
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Controls */
+.carousel-controls {
+    position: absolute;
+    bottom: 3rem;
+    left: 10%;
+    display: flex;
+    gap: 1rem;
+    z-index: 10;
+}
+
+.control-btn {
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--color-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: transparent;
+    transition: all 0.3s;
+    color: var(--color-dark);
+}
+
+.control-btn:hover {
+    background: var(--color-dark);
+    color: white;
+}
+
+@media (max-width: 900px) {
+    .hero-content-wrapper {
+        padding: 2rem;
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero-image-wrapper {
+        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+        order: -1;
+    }
+
+    .carousel-controls {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 1rem;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+}

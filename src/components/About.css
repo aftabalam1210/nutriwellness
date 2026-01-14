@@ -1,0 +1,117 @@
+/* About.css */
+.about {
+    padding: 120px 0;
+    background-color: white;
+}
+
+.about__container {
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+}
+
+/* Image with Arch shape */
+.about__image-placeholder {
+    width: 100%;
+    height: 500px;
+    border-radius: 200px 200px 0 0;
+    /* Huge Arch */
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--shadow-md);
+}
+
+.about__image-placeholder::before {
+    display: none;
+    /* Remove old border */
+}
+
+.about__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Content Styles */
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    color: var(--color-dark);
+    margin-bottom: 2rem;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: var(--color-secondary);
+    margin-top: 1.5rem;
+}
+
+.section-title.center::after {
+    margin: 1.5rem auto 0;
+}
+
+.about__text {
+    font-size: 1.15rem;
+    color: var(--color-text);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.about__features {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+    border-top: 1px solid #eee;
+    padding-top: 3rem;
+}
+
+.feature {
+    text-align: left;
+}
+
+.feature__icon {
+    width: 60px;
+    height: 60px;
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 1rem 0;
+}
+
+.feature h3 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 900px) {
+    .about__container {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .about__image-placeholder {
+        height: 300px;
+    }
+
+    .about__features {
+        grid-template-columns: 1fr;
+    }
+
+    .feature {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .feature__icon {
+        margin: 0;
+    }
+}
