@@ -11,9 +11,14 @@ const Contact = () => {
         isOpen: false,
         selected: ''
     });
+    const [planState, setPlanState] = useState({
+        isOpen: false,
+        selected: ''
+    });
     
     const concernDropdownRef = useRef(null);
     const genderDropdownRef = useRef(null);
+    const planDropdownRef = useRef(null);
 
     const concerns = [
         { value: 'weight', label: 'Weight management' },
@@ -32,7 +37,16 @@ const Contact = () => {
         { value: 'other', label: 'Other / Prefer not to say' }
     ];
 
+    const plans = [
+        { value: 'one-time', label: 'One-time Consultation (₹600)' },
+        { value: '1-month', label: '1 Month Program (₹3,000)' },
+        { value: '3-months', label: '3 Months Program (₹9,000)' },
+        { value: '6-months', label: '6 Months Program (₹18,000)' },
+        { value: 'undecided', label: 'General / Undecided' }
+    ];
+
     useEffect(() => {
+        // Handle dropdown outside clicks
         const handleClickOutside = (event) => {
             if (concernDropdownRef.current && !concernDropdownRef.current.contains(event.target)) {
                 setConcernState(prev => ({ ...prev, isOpen: false }));
@@ -40,15 +54,29 @@ const Contact = () => {
             if (genderDropdownRef.current && !genderDropdownRef.current.contains(event.target)) {
                 setGenderState(prev => ({ ...prev, isOpen: false }));
             }
+            if (planDropdownRef.current && !planDropdownRef.current.contains(event.target)) {
+                setPlanState(prev => ({ ...prev, isOpen: false }));
+            }
+        };
+
+        // Handle external event from Pricing page
+        const handlePlanSelected = (event) => {
+            setPlanState({ isOpen: false, selected: event.detail });
         };
 
         document.addEventListener('mousedown', handleClickOutside);
-        return () => document.removeEventListener('mousedown', handleClickOutside);
+        window.addEventListener('planSelected', handlePlanSelected);
+        
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+            window.removeEventListener('planSelected', handlePlanSelected);
+        };
     }, []);
 
     const handleConcernToggle = () => {
         setConcernState(prev => ({ ...prev, isOpen: !prev.isOpen }));
-        setGenderState(prev => ({ ...prev, isOpen: false })); // Close the other
+        setGenderState(prev => ({ ...prev, isOpen: false }));
+        setPlanState(prev => ({ ...prev, isOpen: false }));
     };
 
     const handleConcernSelect = (value, e) => {
@@ -63,7 +91,8 @@ const Contact = () => {
 
     const handleGenderToggle = () => {
         setGenderState(prev => ({ ...prev, isOpen: !prev.isOpen }));
-        setConcernState(prev => ({ ...prev, isOpen: false })); // Close the other
+        setConcernState(prev => ({ ...prev, isOpen: false }));
+        setPlanState(prev => ({ ...prev, isOpen: false }));
     };
 
     const handleGenderSelect = (value, e) => {
@@ -75,6 +104,23 @@ const Contact = () => {
         const gender = genders.find(g => g.value === genderState.selected);
         return gender ? gender.label : 'Select Gender';
     };
+
+    const handlePlanToggle = () => {
+        setPlanState(prev => ({ ...prev, isOpen: !prev.isOpen }));
+        setConcernState(prev => ({ ...prev, isOpen: false }));
+        setGenderState(prev => ({ ...prev, isOpen: false }));
+    };
+
+    const handlePlanSelect = (value, e) => {
+        e.stopPropagation();
+        setPlanState({ selected: value, isOpen: false });
+    };
+
+    const getSelectedPlanLabel = () => {
+        const plan = plans.find(p => p.value === planState.selected);
+        return plan ? plan.label : 'Select Program / Plan';
+    };
+
 
     return (
         <section className="contact" id="contact">
@@ -159,6 +205,35 @@ const Contact = () => {
                                         onClick={(e) => handleGenderSelect(gender.value, e)}
                                     >
                                         {gender.label}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="form-group">
+                        <label>Interested Plan</label>
+                        <input type="hidden" name="interested_plan" value={planState.selected} />
+                        
+                        <div className="custom-dropdown" ref={planDropdownRef}>
+                            <div 
+                                className={`custom-dropdown-header ${planState.isOpen ? 'open' : ''}`}
+                                onClick={handlePlanToggle}
+                            >
+                                <span style={{ color: planState.selected ? 'var(--color-text)' : '#999' }}>
+                                    {getSelectedPlanLabel()}
+                                </span>
+                                <ChevronDown size={20} className="dropdown-icon" />
+                            </div>
+                            
+                            <div className={`custom-dropdown-list ${planState.isOpen ? 'open' : ''}`}>
+                                {plans.map(plan => (
+                                    <div 
+                                        key={plan.value}
+                                        className={`custom-dropdown-pill ${planState.selected === plan.value ? 'selected' : ''}`}
+                                        onClick={(e) => handlePlanSelect(plan.value, e)}
+                                    >
+                                        {plan.label}
                                     </div>
                                 ))}
                             </div>

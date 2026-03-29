@@ -195,7 +195,7 @@ export const testimonials = [
     {
         id: 4,
         name: "Umesh",
-        text: "Before meeting Shreya, my health was declining rapidly—I was struggling with a fatty liver, high uric acid, high cholesterol, weight gain, and erratic blood pressure. Her expert guidance completely turned my life around! Within just one month, my FibroScan score dropped significantly from 17 to 11, my blood pressure normalized, and I lost weight. I feel healthier and more vibrant than I have in years. Thank you, Shreya, for your incredible support!",
+        text: "My health was in very bad condition before I met Shreya. I was suffering from fatty liver, high uric acid, sugar problem, high cholesterol , increased weight, and BP problems. But after meeting her and following her guidance, my health improved a lot. My FibroScan score came down from 17 to 11, and my BP started staying completely normal and uric acid almost came to normal my weight reduced all in just 1 month. Now I am feeling much healthier and better than before. Thank you so much, Shreya, for your support and guidance.",
         role: "Liver Health & Weight Loss",
         image: "https://ui-avatars.com/api/?name=Umesh&background=random"
     },

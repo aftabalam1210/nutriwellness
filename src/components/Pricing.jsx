@@ -15,7 +15,7 @@ const plans = [
             "Guidance on improving eating patterns",
             "No customised diet plan included"
         ],
-        color: "var(--color-bg)", 
+        color: "var(--color-bg)",
         btnColor: "var(--color-secondary)",
         btnText: "#fff"
     },
@@ -30,7 +30,7 @@ const plans = [
             "Weekly interactions to review & alter plans",
             "Phone, WhatsApp & email support"
         ],
-        color: "var(--color-surface)", 
+        color: "var(--color-surface)",
         btnColor: "var(--color-primary)",
         btnText: "#fff"
     },
@@ -74,8 +74,11 @@ const Pricing = () => {
             <div className="container">
                 <div className="pricing-toggle-wrapper text-center mb-2">
                     <h2 className="section-title">Investment in Your Health</h2>
-                    <p className="section-subtitle">Choose between a single consultation or our curated long-term programs.</p>
-                </div>
+                    <p className="section-subtitle">
+                        You have to choose <br />
+                        a) One time consultation&nbsp;&nbsp;&nbsp;&nbsp;b) Curated program - 1,3 or 6 months.
+                        <br />
+                    </p>                </div>
 
                 <div className="pricing__grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}>
                     {plans.map((plan, index) => (
@@ -86,13 +89,13 @@ const Pricing = () => {
                         >
                             <div className="card-header">
                                 <h3 className="plan-name">{plan.name}</h3>
-                                <p className="plan-desc" style={{minHeight: '40px'}}>{plan.desc}</p>
+                                <p className="plan-desc" style={{ minHeight: '40px' }}>{plan.desc}</p>
                             </div>
 
                             <div className="plan-features-box">
-                                <ul style={{minHeight: '180px'}}>
+                                <ul style={{ minHeight: '180px' }}>
                                     {plan.features.map((feature, i) => (
-                                        <li key={i}><Check size={16} color="var(--color-primary)" style={{marginRight: '8px', flexShrink: 0, marginTop: '4px'}}/> <span style={{fontSize: '0.9rem'}}>{feature}</span></li>
+                                        <li key={i}><Check size={16} color="var(--color-primary)" style={{ marginRight: '8px', flexShrink: 0, marginTop: '4px' }} /> <span style={{ fontSize: '0.9rem' }}>{feature}</span></li>
                                     ))}
                                 </ul>
                             </div>

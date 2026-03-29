@@ -15,6 +15,14 @@
     gap: 1rem;
 }
 
+.pricing-toggle-wrapper .section-title {
+    display: inline-block;
+}
+
+.pricing-toggle-wrapper .section-title::after {
+    width: 100%;
+}
+
 .pricing-toggle {
     display: inline-flex;
     background: white;
