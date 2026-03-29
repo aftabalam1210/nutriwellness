@@ -58,24 +58,27 @@
 }
 
 .icon-box {
-    background: rgba(255, 255, 255, 0.1);
-    width: 40px;
-    height: 40px;
+    background: rgba(255, 255, 255, 0.15);
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-primary);
+    color: var(--color-accent); /* Use bright pale sage instead of dark green */
 }
 
 .contact__item h3 {
-    font-size: 1rem;
-    margin-bottom: 0.25rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    color: var(--color-secondary); /* Give headings a nice terracotta pop */
 }
 
 .contact__item p {
-    opacity: 0.7;
-    font-size: 0.95rem;
+    color: var(--color-surface); /* Pure white text */
+    font-size: 1.05rem;
+    font-weight: 500;
+    /* Opacity removed for maximum legibility */
 }
 
 .contact__form {
@@ -112,4 +115,127 @@
 .contact__form .form-group textarea:focus {
     background: white;
     border-color: var(--color-primary);
+}
+
+/* Styling for generic selects */
+.aesthetic-select {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--color-text);
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1.5rem center;
+    background-size: 16px;
+}
+
+.aesthetic-select:focus {
+    background-color: white;
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 12px rgba(93, 112, 82, 0.1);
+}
+
+/* Custom Stylish Dropdown */
+.custom-dropdown {
+    position: relative;
+    width: 100%;
+}
+
+.custom-dropdown-header {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+    font-size: 1rem;
+    color: var(--color-text);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.custom-dropdown-header:hover {
+    border-color: var(--color-primary);
+    background: white;
+    box-shadow: 0 4px 12px rgba(93, 112, 82, 0.1);
+}
+
+.custom-dropdown-header.open {
+    border-color: var(--color-primary);
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 4px 15px rgba(93, 112, 82, 0.15);
+}
+
+.custom-dropdown-list {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 1px solid #eee;
+    padding: 1.5rem;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.custom-dropdown-list.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.custom-dropdown-pill {
+    padding: 0.8rem 1.2rem;
+    background: rgba(93, 112, 82, 0.05);
+    border: 1px solid transparent;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    color: var(--color-text);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.custom-dropdown-pill:hover {
+    background: rgba(93, 112, 82, 0.15);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.custom-dropdown-pill.selected {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 10px rgba(93, 112, 82, 0.3);
+}
+
+.dropdown-icon {
+    transition: transform 0.3s ease;
+    color: #666;
+}
+
+.custom-dropdown-header.open .dropdown-icon {
+    transform: rotate(180deg);
+    color: var(--color-primary);
 }

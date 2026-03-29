@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import HeroCarousel from './components/HeroCarousel';
 import About from './components/About';
+import HowItWorks from './components/HowItWorks';
 import Pricing from './components/Pricing';
 import BMICalculator from './components/BMICalculator';
 import Recipes from './components/Recipes';
@@ -17,6 +18,7 @@ function App() {
       <Navbar />
       <HeroCarousel />
       <About />
+      <HowItWorks />
       <Pricing />
       <Recipes />
       <BMICalculator />

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Cormorant+Garamond:wght@300;400;600;700&display=swap');
 
 :root {
   /* Premium Wellness Palette */
@@ -17,8 +17,9 @@
   --color-text-light: #767676;
 
   /* Fonts */
-  --font-heading: 'Special Elite', serif;
-  --font-body: 'Special Elite', cursive;
+  --font-heading: 'Cormorant Garamond', serif;
+  /* Canela Alternative */
+  --font-body: 'Lato', sans-serif;
 
   /* Spacing & Radius */
   --radius-sm: 8px;

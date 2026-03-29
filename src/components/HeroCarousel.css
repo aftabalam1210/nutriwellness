@@ -10,72 +10,21 @@
 .hero-carousel__slide {
     width: 100%;
     height: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     align-items: center;
+    justify-content: center;
     position: absolute;
     top: 0;
     left: 0;
 }
 
-@media (max-width: 900px) {
-    .hero-carousel__slide {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
-    }
-}
-
-/* Content Side (Left) */
-.hero-content-wrapper {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 4rem 0 10%;
-    background-color: var(--color-bg);
-    z-index: 2;
-}
-
-.hero-tag {
-    display: inline-block;
-    color: var(--color-secondary);
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
-    margin-bottom: 1.5rem;
-}
-
-.hero-title {
-    color: var(--color-dark);
-    margin-bottom: 2rem;
-    line-height: 1.15;
-}
-
-.hero-subtitle {
-    font-size: 1.25rem;
-    color: var(--color-text-light);
-    margin-bottom: 3rem;
-    max-width: 500px;
-}
-
-/* Image Side (Right) */
+/* Background Image */
 .hero-image-wrapper {
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Create the Arch Shape Mask */
-.hero-image-wrapper::before {
-    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* Subtle overlay if needed */
-    background: rgba(0, 0, 0, 0.1);
     z-index: 1;
 }
 
@@ -85,54 +34,122 @@
     object-fit: cover;
 }
 
-/* Controls */
+/* Dark Overlay for Text Readability */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(44, 54, 43, 0.45); /* Based on --color-dark */
+    z-index: 2;
+}
+
+/* Centered Content */
+.hero-content-wrapper {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-surface);
+    padding: 0 4rem;
+    max-width: 900px;
+}
+
+.hero-tag {
+    display: inline-block;
+    color: var(--color-surface); /* Changed from secondary to surface for maximum visibility */
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5); /* Added shadow to guarantee pop */
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--color-surface);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--color-accent);
+    margin-bottom: 3rem;
+    max-width: 700px;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+/* Controls - Left and Right Arrows */
 .carousel-controls {
     position: absolute;
-    bottom: 3rem;
-    left: 10%;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
     display: flex;
-    gap: 1rem;
+    justify-content: space-between;
+    padding: 0 2rem;
     z-index: 10;
+    pointer-events: none; /* Let clicks pass through empty space */
 }
 
 .control-btn {
+    pointer-events: auto; /* Re-enable clicks on buttons */
     width: 50px;
     height: 50px;
-    border: 1px solid var(--color-dark);
+    background-color: var(--color-surface);
+    color: var(--color-dark);
+    border: none;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    background: transparent;
-    transition: all 0.3s;
-    color: var(--color-dark);
+    transition: opacity 0.3s, transform 0.2s, background-color 0.3s, color 0.3s;
+    opacity: 0.8;
 }
 
 .control-btn:hover {
-    background: var(--color-dark);
-    color: white;
+    opacity: 1;
+    background-color: var(--color-dark);
+    color: var(--color-surface);
+    transform: scale(1.05);
 }
 
 @media (max-width: 900px) {
     .hero-content-wrapper {
-        padding: 2rem;
-        text-align: center;
-        align-items: center;
-    }
-
-    .hero-image-wrapper {
-        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-        order: -1;
-    }
-
-    .carousel-controls {
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 1rem;
+        padding: 0 2rem;
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .carousel-controls {
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .control-btn {
+        width: 40px;
+        height: 40px;
     }
 }

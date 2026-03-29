@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Blog.css';
 import { ArrowRight } from 'lucide-react';
 import { blogPosts } from '../data'; // Import from central data
+import BlogModal from './BlogModal'; // Import Modal
 
 const Blog = () => {
+    const [selectedPost, setSelectedPost] = useState(null);
+
     return (
         <section className="blog" id="blog">
             <div className="container">
@@ -23,15 +26,29 @@ const Blog = () => {
                                 <span className="blog-date">{post.date}</span>
                                 <h3>{post.title}</h3>
                                 <p>{post.excerpt}</p>
-                                <a href="#" className="read-more">
+
+                                {/* Changed href to onClick button */}
+                                <button
+                                    className="read-more-btn"
+                                    onClick={() => setSelectedPost(post)}
+                                >
                                     Read Article <ArrowRight size={16} />
-                                </a>
+                                </button>
                             </div>
                         </article>
                     ))}
                 </div>
 
             </div>
+
+            {/* Render Modal */}
+            {selectedPost && (
+                <BlogModal
+                    post={selectedPost}
+                    onClose={() => setSelectedPost(null)}
+                />
+            )}
+
         </section>
     );
 };

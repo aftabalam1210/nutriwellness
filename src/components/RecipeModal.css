@@ -1,0 +1,316 @@
+/* RecipeModal.css */
+
+/* Reusing generic overlay styles but ensuring scoped classes */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    /* Slightly darker */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.2s ease-out forwards;
+}
+
+/* Renamed from .recipe-modal to .recipe-modal-content to avoid conflicts */
+.recipe-modal-content {
+    background: white;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    border-radius: var(--radius-lg);
+    overflow-y: auto;
+    position: relative;
+    padding: 0;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    color: var(--color-dark);
+    transition: transform 0.2s;
+}
+
+.modal-close:hover {
+    transform: scale(1.1);
+}
+
+.recipe-modal__header {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    flex-shrink: 0;
+}
+
+.recipe-modal__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.recipe-modal__title-box {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%);
+    padding: 2rem;
+    color: white;
+}
+
+.recipe-modal__title-box h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.recipe-modal__title-box .recipe-meta {
+    color: rgba(255, 255, 255, 0.95);
+    display: flex;
+    gap: 1.5rem;
+    font-weight: 500;
+}
+
+.recipe-modal__title-box .recipe-meta span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* Improve icon spacing */
+}
+
+.recipe-modal__body {
+    padding: 3rem;
+}
+
+.recipe-description {
+    font-size: 1.15rem;
+    margin-bottom: 3rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    font-style: italic;
+    border-left: 4px solid var(--color-secondary);
+    padding-left: 1.5rem;
+}
+
+.recipe-columns {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+}
+
+.recipe-modal__body h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+/* Ingredients */
+.recipe-ingredients ul {
+    list-style: none;
+}
+
+.recipe-ingredients li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1rem;
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+}
+
+.recipe-ingredients li::before {
+    content: "•";
+    color: var(--color-secondary);
+    font-size: 1.5rem;
+    margin-right: 0.8rem;
+    line-height: 1;
+}
+
+/* Instructions */
+.recipe-instructions ol {
+    counter-reset: step-counter;
+    list-style: none;
+}
+
+.recipe-instructions li {
+    position: relative;
+    padding-left: 3.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.recipe-instructions li::before {
+    counter-increment: step-counter;
+    content: counter(step-counter);
+    position: absolute;
+    left: 0;
+    top: -2px;
+    width: 32px;
+    height: 32px;
+    background-color: var(--color-secondary);
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .recipe-columns {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .recipe-modal__title-box h2 {
+        font-size: 1.8rem;
+    }
+
+    .recipe-modal-content {
+        width: 100%;
+        height: 100%;
+        max-height: 100vh;
+        border-radius: 0;
+    }
+
+    .modal-close {
+        top: 15px;
+        right: 15px;
+        background: white;
+        /* clearer on mobile */
+    }
+}
+
+/* Nutrition Overlay Styles */
+.recipe-nutrition-overlay {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.nutrient-badge {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-sm);
+    padding: 0.5rem 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: white;
+    transition: transform 0.2s ease;
+}
+
+.nutrient-badge:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.nutrient-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.nutrient-val {
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.nutrient-lbl {
+    font-size: 0.7rem;
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Update header layout */
+.recipe-modal__title-box {
+    padding-bottom: 2.5rem;
+    /* More space for the new row */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 50%, transparent 100%);
+}
+
+.recipe-meta-primary {
+    display: flex;
+    gap: 1.5rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 0.5rem;
+}
+
+.recipe-meta-primary span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Structured Ingredients Styles */
+.ingredient-section {
+    margin-bottom: 1.5rem;
+}
+
+.ingredient-section h4 {
+    font-size: 1.1rem;
+    color: var(--color-secondary);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    border-bottom: 1px dashed #ddd;
+    padding-bottom: 0.3rem;
+    display: inline-block;
+}
+
+.ingredient-section ul {
+    list-style: none;
+    padding: 0;
+}

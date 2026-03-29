@@ -77,8 +77,20 @@ const HeroCarousel = () => {
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.8 }}
                 >
+                    {/* Background Image */}
+                    <div className="hero-image-wrapper">
+                        <motion.img
+                            src={slides[current].image}
+                            alt="Hero"
+                            className="hero-img"
+                            initial={{ scale: 1.1 }}
+                            animate={{ scale: 1 }}
+                            transition={{ duration: 7, ease: "linear" }}
+                        />
+                        <div className="hero-overlay"></div>
+                    </div>
 
-                    {/* Text Content */}
+                    {/* Centered Content */}
                     <div className="hero-content-wrapper">
                         <motion.span
                             initial={{ y: 20, opacity: 0 }}
@@ -116,27 +128,14 @@ const HeroCarousel = () => {
                             {slides[current].cta}
                         </motion.button>
                     </div>
-
-                    {/* Image Content */}
-                    <div className="hero-image-wrapper">
-                        <motion.img
-                            src={slides[current].image}
-                            alt="Hero"
-                            className="hero-img"
-                            initial={{ scale: 1.1 }}
-                            animate={{ scale: 1 }}
-                            transition={{ duration: 6, ease: "linear" }}
-                        />
-                    </div>
-
                 </motion.div>
             </AnimatePresence>
 
+            {/* Side Controls */}
             <div className="carousel-controls">
-                <button className="control-btn" onClick={prevSlide}><ArrowLeft size={20} /></button>
-                <button className="control-btn" onClick={nextSlide}><ArrowRight size={20} /></button>
+                <button className="control-btn" onClick={prevSlide}><ArrowLeft size={24} /></button>
+                <button className="control-btn" onClick={nextSlide}><ArrowRight size={24} /></button>
             </div>
-
         </div>
     );
 };

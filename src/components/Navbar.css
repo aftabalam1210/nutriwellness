@@ -25,17 +25,31 @@
 .navbar__logo {
     font-family: var(--font-heading);
     font-size: 1.8rem;
-    color: var(--color-dark);
+    color: var(--color-surface); /* White top */
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5); /* Helps visibility on light image spots */
     font-weight: 700;
     text-decoration: none;
     letter-spacing: -0.03em;
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.navbar--scrolled .navbar__logo {
+    color: var(--color-dark);
+    text-shadow: none; /* Remove shadow on white background */
 }
 
 .navbar__logo-icon {
-    color: var(--color-primary);
+    color: var(--color-surface); /* White leaf icon on top */
+    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.5));
+    transition: color 0.3s ease, filter 0.3s ease;
+}
+
+.navbar--scrolled .navbar__logo-icon {
+    color: var(--color-primary); /* Green leaf icon on scroll */
+    filter: none;
 }
 
 .navbar__menu {
@@ -47,12 +61,19 @@
 
 .navbar__menu a {
     text-decoration: none;
-    color: var(--color-dark);
+    color: var(--color-surface); /* White text top */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); 
     font-size: 0.95rem;
     font-weight: 500;
     letter-spacing: 0.02em;
     position: relative;
     padding-bottom: 4px;
+    transition: color 0.3s ease;
+}
+
+.navbar--scrolled .navbar__menu a {
+    color: var(--color-dark);
+    text-shadow: none;
 }
 
 .navbar__menu a:not(.btn)::after {
@@ -74,6 +95,13 @@
 .navbar__cta {
     padding: 0.8rem 1.5rem !important;
     font-size: 0.8rem !important;
+    text-shadow: none !important; /* Never shadow the button text */
+    color: white !important; /* Button text is strictly white */
+}
+
+/* Make sure the text color is correct for btn depending on the theme btn-primary */
+.navbar--scrolled .navbar__cta {
+    color: white !important; /* Stays white inside the dark green primary button */
 }
 
 .navbar__toggle {
@@ -81,7 +109,14 @@
     background: none;
     border: none;
     cursor: pointer;
+    color: var(--color-surface);
+    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.5));
+    transition: color 0.3s ease;
+}
+
+.navbar--scrolled .navbar__toggle {
     color: var(--color-dark);
+    filter: none;
 }
 
 @media (max-width: 900px) {
@@ -112,8 +147,11 @@
         gap: 2rem;
     }
 
+    /* Override menu links inside mobile view */
     .navbar__menu a {
         font-size: 1.5rem;
         font-family: var(--font-heading);
+        color: var(--color-dark); /* Ensure text is dark inside the light mobile menu background */
+        text-shadow: none;
     }
 }

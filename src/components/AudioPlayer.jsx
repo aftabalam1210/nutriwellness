@@ -31,11 +31,11 @@ const AudioPlayer = () => {
                 audioRef.current.volume = 0.5;
                 audioRef.current.play().then(() => {
                     setIsPlaying(true);
-                    // Remove listeners once played
-                    document.removeEventListener('click', startAudio);
-                    document.removeEventListener('keydown', startAudio);
+                    // Remove ALL listeners once played to prevent re-triggering
+                    const events = ['click', 'touchstart', 'scroll', 'keydown'];
+                    events.forEach(event => document.removeEventListener(event, startAudio));
                 }).catch((error) => {
-                    console.log("Autoplay blocked. Waiting for interaction.");
+                    // console.log("Autoplay blocked. Waiting for interaction.");
                     setIsPlaying(false);
                 });
             }
@@ -55,13 +55,13 @@ const AudioPlayer = () => {
 
     return (
         <div className="audio-player">
-            <audio ref={audioRef} src={audioUrl} loop autoPlay />
+            <audio ref={audioRef} src={audioUrl} loop />
             <button
                 className={`audio-btn ${isPlaying ? 'playing' : ''}`}
                 onClick={togglePlay}
                 aria-label={isPlaying ? "Pause Music" : "Play Music"}
             >
-                {isPlaying ? <Pause size={20} /> : <Play size={20} />}
+                {isPlaying ? <Pause size={20} /> : <Music size={20} />}
                 {/* Changed default icon to Play to prompt user if paused */}
 
                 <span className="audio-tooltip">

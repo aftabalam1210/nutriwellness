@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Recipes.css';
 import { Clock, Flame, ChefHat } from 'lucide-react';
 import { recipes } from '../data'; // Import from central data
+import RecipeModal from './RecipeModal';
 
 const Recipes = () => {
+    const [selectedRecipe, setSelectedRecipe] = useState(null);
+
     return (
         <section className="recipes" id="recipes">
             <div className="container">
@@ -26,7 +29,12 @@ const Recipes = () => {
                                     <span><Clock size={16} /> {recipe.time}</span>
                                     <span><Flame size={16} /> {recipe.cal}</span>
                                 </div>
-                                <button className="btn btn-sm btn-outline">View Recipe</button>
+                                <button
+                                    className="btn btn-sm btn-outline"
+                                    onClick={() => setSelectedRecipe(recipe)}
+                                >
+                                    View Recipe
+                                </button>
                             </div>
                         </div>
                     ))}
@@ -40,6 +48,15 @@ const Recipes = () => {
                 </div>
 
             </div>
+
+            {/* Render Modal if a recipe is selected */}
+            {selectedRecipe && (
+                <RecipeModal
+                    recipe={selectedRecipe}
+                    onClose={() => setSelectedRecipe(null)}
+                />
+            )}
+
         </section>
     );
 };
