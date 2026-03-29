@@ -7,7 +7,13 @@ const Contact = () => {
         isOpen: false,
         selected: ''
     });
-    const dropdownRef = useRef(null);
+    const [genderState, setGenderState] = useState({
+        isOpen: false,
+        selected: ''
+    });
+    
+    const concernDropdownRef = useRef(null);
+    const genderDropdownRef = useRef(null);
 
     const concerns = [
         { value: 'weight', label: 'Weight management' },
@@ -20,10 +26,19 @@ const Contact = () => {
         { value: 'other', label: 'Any other?' }
     ];
 
+    const genders = [
+        { value: 'female', label: 'Female' },
+        { value: 'male', label: 'Male' },
+        { value: 'other', label: 'Other / Prefer not to say' }
+    ];
+
     useEffect(() => {
         const handleClickOutside = (event) => {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+            if (concernDropdownRef.current && !concernDropdownRef.current.contains(event.target)) {
                 setConcernState(prev => ({ ...prev, isOpen: false }));
+            }
+            if (genderDropdownRef.current && !genderDropdownRef.current.contains(event.target)) {
+                setGenderState(prev => ({ ...prev, isOpen: false }));
             }
         };
 
@@ -33,6 +48,7 @@ const Contact = () => {
 
     const handleConcernToggle = () => {
         setConcernState(prev => ({ ...prev, isOpen: !prev.isOpen }));
+        setGenderState(prev => ({ ...prev, isOpen: false })); // Close the other
     };
 
     const handleConcernSelect = (value, e) => {
@@ -43,6 +59,21 @@ const Contact = () => {
     const getSelectedLabel = () => {
         const concern = concerns.find(c => c.value === concernState.selected);
         return concern ? concern.label : 'Select Primary Concern';
+    };
+
+    const handleGenderToggle = () => {
+        setGenderState(prev => ({ ...prev, isOpen: !prev.isOpen }));
+        setConcernState(prev => ({ ...prev, isOpen: false })); // Close the other
+    };
+
+    const handleGenderSelect = (value, e) => {
+        e.stopPropagation();
+        setGenderState({ selected: value, isOpen: false });
+    };
+
+    const getSelectedGenderLabel = () => {
+        const gender = genders.find(g => g.value === genderState.selected);
+        return gender ? gender.label : 'Select Gender';
     };
 
     return (
@@ -107,20 +138,38 @@ const Contact = () => {
 
                     <div className="form-group">
                         <label>Gender</label>
-                        <select className="aesthetic-select" required>
-                            <option value="">Select Gender</option>
-                            <option value="female">Female</option>
-                            <option value="male">Male</option>
-                            <option value="other">Other / Prefer not to say</option>
-                        </select>
+                        <input type="hidden" name="gender" value={genderState.selected} />
+                        
+                        <div className="custom-dropdown" ref={genderDropdownRef}>
+                            <div 
+                                className={`custom-dropdown-header ${genderState.isOpen ? 'open' : ''}`}
+                                onClick={handleGenderToggle}
+                            >
+                                <span style={{ color: genderState.selected ? 'var(--color-text)' : '#999' }}>
+                                    {getSelectedGenderLabel()}
+                                </span>
+                                <ChevronDown size={20} className="dropdown-icon" />
+                            </div>
+                            
+                            <div className={`custom-dropdown-list ${genderState.isOpen ? 'open' : ''}`}>
+                                {genders.map(gender => (
+                                    <div 
+                                        key={gender.value}
+                                        className={`custom-dropdown-pill ${genderState.selected === gender.value ? 'selected' : ''}`}
+                                        onClick={(e) => handleGenderSelect(gender.value, e)}
+                                    >
+                                        {gender.label}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
                     </div>
 
                     <div className="form-group">
                         <label>Choose your primary concern</label>
-                        {/* Hidden input to ensure form submission includes this data if needed */}
                         <input type="hidden" name="primary_concern" value={concernState.selected} />
                         
-                        <div className="custom-dropdown" ref={dropdownRef}>
+                        <div className="custom-dropdown" ref={concernDropdownRef}>
                             <div 
                                 className={`custom-dropdown-header ${concernState.isOpen ? 'open' : ''}`}
                                 onClick={handleConcernToggle}
