@@ -200,6 +200,13 @@ export const testimonials = [
         image: "https://ui-avatars.com/api/?name=Umesh&background=random"
     },
     {
+        id: 5,
+        name: "Keshav",
+        text: "It has been a little hectic to follow through with the diet plan but it has proven to be quite effective. And having a change in the diet actually made me understand where I am missing out on my nutrition. I was concerned about my weight gain, bloating and sluggishness during the day. Following the diet suggest by Shreya really helped me with those problems. I especially liked the regular follow ups since, in a way, they held me accountable for my choices without being judged.",
+        role: "Weight Loss",
+        image: "https://ui-avatars.com/api/?name=Keshav&background=random"
+    },
+    {
         id: 1,
         name: "Sarah Jenkins",
         text: "I've tried so many diets, but this holistic approach was the only thing that stuck. I feel more energetic and balanced than I have in years!",

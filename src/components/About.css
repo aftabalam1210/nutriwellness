@@ -51,8 +51,13 @@
 }
 
 @keyframes floating {
-    0% { transform: translateY(0px); }
-    100% { transform: translateY(-10px); }
+    0% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(-10px);
+    }
 }
 
 .badge-number {
@@ -139,7 +144,7 @@
     .about__image-placeholder {
         height: 300px;
     }
-    
+
     .about__floating-badge {
         bottom: -20px;
         right: 0;

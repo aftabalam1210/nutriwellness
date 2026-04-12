@@ -1,0 +1,137 @@
+.tdee-section {
+    padding: 100px 0;
+    background-color: var(--color-bg);
+}
+
+.tdee-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    background: white;
+    border-radius: 30px;
+    padding: 4rem;
+    box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 900px) {
+    .tdee-container {
+        flex-direction: column;
+        padding: 2rem;
+        gap: 2rem;
+    }
+}
+
+.tdee-content {
+    flex: 1;
+}
+
+.tdee-content h2 {
+    font-size: 2.5rem;
+    color: var(--color-dark);
+    margin-bottom: 1rem;
+}
+
+.tdee-form {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+@media (max-width: 600px) {
+    .input-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    background: #fdfdfd;
+}
+
+.input-group.full-width {
+    width: 100%;
+}
+
+.tdee-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.tdee-result-card {
+    flex: 1;
+    background: #f8fcf8;
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.02);
+    min-width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+}
+
+.result-display {
+    width: 100%;
+}
+
+.tdee-label {
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    color: var(--color-text-light);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.tdee-value {
+    font-size: 5rem;
+    font-weight: 800;
+    color: var(--color-dark);
+    line-height: 1;
+}
+
+.tdee-unit {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.tdee-message {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+}
+
+.result-placeholder {
+    opacity: 0.5;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

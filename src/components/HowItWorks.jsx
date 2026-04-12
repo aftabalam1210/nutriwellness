@@ -39,7 +39,7 @@ const HowItWorks = () => {
                     <h2 className="section-title">How It Works</h2>
                     <p className="section-subtitle">Our curated program is designed as a simple 3-stage process.</p>
                 </div>
-                
+
                 <div className="stages-grid">
                     {stages.map((stage, index) => (
                         <div key={index} className="stage-card">

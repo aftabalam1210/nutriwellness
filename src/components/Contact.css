@@ -65,17 +65,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-accent); /* Use bright pale sage instead of dark green */
+    color: var(--color-accent);
+    /* Use bright pale sage instead of dark green */
 }
 
 .contact__item h3 {
     font-size: 1.1rem;
     margin-bottom: 0.3rem;
-    color: var(--color-secondary); /* Give headings a nice terracotta pop */
+    color: var(--color-secondary);
+    /* Give headings a nice terracotta pop */
 }
 
 .contact__item p {
-    color: var(--color-surface); /* Pure white text */
+    color: var(--color-surface);
+    /* Pure white text */
     font-size: 1.05rem;
     font-weight: 500;
     /* Opacity removed for maximum legibility */
@@ -184,7 +187,7 @@
     right: 0;
     background: white;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     border: 1px solid #eee;
     padding: 1.5rem;
     z-index: 100;

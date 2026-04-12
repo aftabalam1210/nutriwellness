@@ -1,0 +1,82 @@
+.learn-section {
+    padding: 60px 0;
+    background-color: var(--color-bg);
+}
+
+.learn-container {
+    max-width: 800px;
+}
+
+.learn-accordion {
+    width: 100%;
+}
+
+.learn-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 20px 0;
+    position: relative;
+    gap: 2rem;
+}
+
+.learn-header h2 {
+    font-size: 2.2rem;
+    font-family: var(--font-body);
+    font-weight: 400;
+    color: #333;
+    margin: 0;
+}
+
+.learn-header:hover h2 {
+    color: var(--color-primary);
+}
+
+.learn-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease;
+    text-align: center;
+}
+
+.learn-content.open {
+    max-height: 500px; /* Large enough for content */
+    padding-top: 2rem;
+}
+
+.learn-list {
+    list-style: none;
+    padding: 0;
+}
+
+.learn-item {
+    margin-bottom: 1.5rem;
+}
+
+.learn-item a {
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: #000;
+    font-weight: 300;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-family: var(--font-body);
+}
+
+.learn-item a:hover {
+    color: var(--color-secondary);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+    .learn-header h2 {
+        font-size: 1.8rem;
+    }
+    .learn-item a {
+        font-size: 1.4rem;
+    }
+}

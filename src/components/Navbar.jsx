@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Leaf } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, X, Leaf, ChevronDown } from 'lucide-react';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,15 +17,44 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close menus on route change
+  useEffect(() => {
+    setIsOpen(false);
+    setDropdownOpen(false);
+  }, [location]);
+
+  const toggleDropdown = (e) => {
+    if (window.innerWidth <= 900) {
+      e.preventDefault();
+      setDropdownOpen(!dropdownOpen);
+    }
+  };
+
+  const NavLink = ({ to, children, isExternal = false, isButton = false }) => {
+    const isHome = location.pathname === '/';
+    const href = isHome ? to : `/${to}`;
+    const className = isButton ? 'btn' : '';
+
+    if (isExternal || to.startsWith('http')) {
+        return <a href={to} className={className} target="_blank" rel="noopener noreferrer">{children}</a>;
+    }
+
+    if (to.startsWith('#')) {
+        return <a href={href} className={className} onClick={() => setIsOpen(false)}>{children}</a>;
+    }
+
+    return <Link to={to} className={className} onClick={() => setIsOpen(false)}>{children}</Link>;
+  };
+
   return (
     <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="container navbar__container">
-        <a href="#" className="navbar__logo">
+        <Link to="/" className="navbar__logo">
           <div className="navbar__logo-icon-wrapper">
              <Leaf className="navbar__logo-icon" size={24} />
           </div>
           <span className="navbar__logo-text">Nutri<span className="highlight">Wellness</span></span>
-        </a>
+        </Link>
         
         <button className="navbar__toggle" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
           {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -30,13 +62,31 @@ const Navbar = () => {
 
         <div className={`navbar__menu-wrapper ${isOpen ? 'active' : ''}`}>
           <ul className="navbar__menu">
-            <li onClick={() => setIsOpen(false)}><a href="#home">Home</a></li>
-            <li onClick={() => setIsOpen(false)}><a href="#about">About</a></li>
-            <li onClick={() => setIsOpen(false)}><a href="#pricing">Plans</a></li>
-            <li onClick={() => setIsOpen(false)}><a href="#recipes">Recipes</a></li>
-            <li onClick={() => setIsOpen(false)}><a href="#bmi">BMI Check</a></li>
-            <li onClick={() => setIsOpen(false)}>
-              <a href="#contact" className="btn btn-primary navbar__cta">Book Consultation</a>
+            <li><NavLink to="#home">Home</NavLink></li>
+            <li><NavLink to="#about">About</NavLink></li>
+            <li><NavLink to="#pricing">Plans</NavLink></li>
+            <li><NavLink to="#recipes">Recipes</NavLink></li>
+            <li><NavLink to="#bmi">BMI Check</NavLink></li>
+            <li><NavLink to="#tdee">TDEE Check</NavLink></li>
+            
+            <li className={`nav-dropdown ${dropdownOpen ? 'open' : ''}`} 
+                onMouseEnter={() => window.innerWidth > 900 && setDropdownOpen(true)}
+                onMouseLeave={() => window.innerWidth > 900 && setDropdownOpen(false)}>
+              <div className="dropdown-trigger" onClick={toggleDropdown}>
+                Learn With Me <ChevronDown size={14} className={`chevron ${dropdownOpen ? 'rotated' : ''}`} />
+              </div>
+              <ul className="dropdown-menu">
+                <li><Link to="/podcast">Podcast</Link></li>
+                <li><Link to="/videos">Videos</Link></li>
+                <li><Link to="/recipes">Full Recipes</Link></li>
+                <li><Link to="/blogs">Blogs</Link></li>
+              </ul>
+            </li>
+
+            <li>
+              <NavLink to="#contact" isButton>
+                <span className="btn btn-primary navbar__cta">Book Consultation</span>
+              </NavLink>
             </li>
           </ul>
         </div>

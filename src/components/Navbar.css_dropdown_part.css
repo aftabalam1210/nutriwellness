@@ -1,0 +1,112 @@
+/* Navbar Dropdown Styles */
+.nav-dropdown {
+    position: relative;
+    cursor: pointer;
+}
+
+.dropdown-trigger {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--color-surface);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar--scrolled .dropdown-trigger {
+    color: var(--color-dark);
+    text-shadow: none;
+}
+
+.chevron {
+    transition: transform 0.3s ease;
+}
+
+.chevron.rotated {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: white;
+    min-width: 180px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    padding: 1rem 0;
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown.open .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 0.8rem 1.5rem;
+    color: var(--color-dark) !important;
+    text-shadow: none !important;
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+    background: var(--color-accent);
+    color: var(--color-primary) !important;
+}
+
+.dropdown-menu li a::after {
+    display: none !important; /* Remove line animation from dropdown items */
+}
+
+/* Mobile Dropdown Adjustments */
+@media (max-width: 900px) {
+    .nav-dropdown {
+        width: 100%;
+        text-align: center;
+    }
+
+    .dropdown-trigger {
+        color: var(--color-dark);
+        text-shadow: none;
+        font-size: 1.5rem;
+        font-family: var(--font-heading);
+        justify-content: center;
+        width: 100%;
+    }
+
+    .dropdown-menu {
+        position: static;
+        transform: none;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        display: none;
+        width: 100%;
+        background: transparent;
+        padding: 0;
+    }
+
+    .nav-dropdown.open .dropdown-menu {
+        display: block;
+        margin-top: 1rem;
+    }
+
+    .dropdown-menu li a {
+        padding: 0.5rem;
+        font-size: 1.2rem;
+    }
+}
