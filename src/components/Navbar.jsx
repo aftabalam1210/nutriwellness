@@ -36,11 +36,11 @@ const Navbar = () => {
     const className = isButton ? 'btn' : '';
 
     if (isExternal || to.startsWith('http')) {
-        return <a href={to} className={className} target="_blank" rel="noopener noreferrer">{children}</a>;
+      return <a href={to} className={className} target="_blank" rel="noopener noreferrer">{children}</a>;
     }
 
     if (to.startsWith('#')) {
-        return <a href={href} className={className} onClick={() => setIsOpen(false)}>{children}</a>;
+      return <a href={href} className={className} onClick={() => setIsOpen(false)}>{children}</a>;
     }
 
     return <Link to={to} className={className} onClick={() => setIsOpen(false)}>{children}</Link>;
@@ -51,11 +51,11 @@ const Navbar = () => {
       <div className="container navbar__container">
         <Link to="/" className="navbar__logo">
           <div className="navbar__logo-icon-wrapper">
-             <Leaf className="navbar__logo-icon" size={24} />
+            <Leaf className="navbar__logo-icon" size={24} />
           </div>
           <span className="navbar__logo-text">Nutri<span className="highlight">Wellness</span></span>
         </Link>
-        
+
         <button className="navbar__toggle" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
@@ -68,15 +68,15 @@ const Navbar = () => {
             <li><NavLink to="#recipes">Recipes</NavLink></li>
             <li><NavLink to="#bmi">BMI Check</NavLink></li>
             <li><NavLink to="#tdee">TDEE Check</NavLink></li>
-            
-            <li className={`nav-dropdown ${dropdownOpen ? 'open' : ''}`} 
-                onMouseEnter={() => window.innerWidth > 900 && setDropdownOpen(true)}
-                onMouseLeave={() => window.innerWidth > 900 && setDropdownOpen(false)}>
+
+            <li className={`nav-dropdown ${dropdownOpen ? 'open' : ''}`}
+              onMouseEnter={() => window.innerWidth > 900 && setDropdownOpen(true)}
+              onMouseLeave={() => window.innerWidth > 900 && setDropdownOpen(false)}>
               <div className="dropdown-trigger" onClick={toggleDropdown}>
                 Learn With Me <ChevronDown size={14} className={`chevron ${dropdownOpen ? 'rotated' : ''}`} />
               </div>
               <ul className="dropdown-menu">
-                <li><Link to="/recipes">Full Recipes</Link></li>
+                {/* <li><Link to="/recipes">Full Recipes</Link></li> */}
                 <li><Link to="/articles">Articles</Link></li>
               </ul>
             </li>

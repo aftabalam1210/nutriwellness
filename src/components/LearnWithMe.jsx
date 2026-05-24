@@ -10,7 +10,7 @@ const LearnWithMe = () => {
     };
 
     const learnItems = [
-        { name: 'Recipe', link: '#recipes' },
+        // { name: 'Recipe', link: '#recipes' },
         { name: 'Articles', link: '#articles' }
     ];
 
@@ -22,7 +22,7 @@ const LearnWithMe = () => {
                         <h2>Learn with me</h2>
                         {isOpen ? <ChevronUp size={28} /> : <ChevronDown size={28} />}
                     </button>
-                    
+
                     <div className={`learn-content ${isOpen ? 'open' : ''}`}>
                         <ul className="learn-list">
                             {learnItems.map((item, index) => (

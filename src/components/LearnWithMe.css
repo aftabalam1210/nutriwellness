@@ -44,7 +44,8 @@
 }
 
 .learn-content.open {
-    max-height: 500px; /* Large enough for content */
+    max-height: 500px;
+    /* Large enough for content */
     padding-top: 2rem;
 }
 
@@ -76,6 +77,7 @@
     .learn-header h2 {
         font-size: 1.8rem;
     }
+
     .learn-item a {
         font-size: 1.4rem;
     }
