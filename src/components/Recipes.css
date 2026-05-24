@@ -97,3 +97,51 @@
     color: var(--color-primary);
     border-color: var(--color-primary);
 }
+
+/* Veg & Non-Veg indicators */
+.recipe-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.recipe-title-row h3 {
+    margin-bottom: 0 !important;
+}
+
+.recipe-type-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 2px;
+    flex-shrink: 0;
+    background: white;
+}
+
+.recipe-type-badge.veg {
+    border: 2px solid #2e7d32;
+}
+
+.recipe-type-badge.veg .dot {
+    width: 8px;
+    height: 8px;
+    background-color: #2e7d32;
+    border-radius: 50%;
+    display: block;
+}
+
+.recipe-type-badge.non-veg {
+    border: 2px solid #c62828;
+}
+
+.recipe-type-badge.non-veg .dot {
+    width: 8px;
+    height: 8px;
+    background-color: #c62828;
+    border-radius: 50%;
+    display: block;
+}

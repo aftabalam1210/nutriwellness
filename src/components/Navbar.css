@@ -198,8 +198,10 @@
         height: 100vh;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
+        padding: 6rem 1.5rem 3rem;
+        overflow-y: auto;
         transition: 0.4s ease;
     }
 

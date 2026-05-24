@@ -87,7 +87,7 @@ const Pricing = () => {
         <section className="pricing" id="pricing">
             <div className="container">
                 <div className="pricing-toggle-wrapper text-center" style={{ marginBottom: '4rem' }}>
-                    <h2 className="section-title">Investment in Your Health</h2>
+                    <h2 className="section-title">Invest in Your Health</h2>
                     <div style={{
                         marginTop: '2rem',
                         display: 'flex',
@@ -98,32 +98,32 @@ const Pricing = () => {
                         <p style={{ fontSize: '1.2rem', color: 'var(--color-text)', fontWeight: '600', marginBottom: '0.5rem' }}>
                             You have to choose:
                         </p>
-                        <div style={{ 
-                            display: 'flex', 
-                            gap: '1.5rem', 
-                            flexWrap: 'wrap', 
-                            justifyContent: 'center' 
+                        <div style={{
+                            display: 'flex',
+                            gap: '1.5rem',
+                            flexWrap: 'wrap',
+                            justifyContent: 'center'
                         }}>
-                            <div style={{ 
-                                display: 'flex', 
-                                alignItems: 'center', 
-                                gap: '0.8rem', 
-                                background: 'white', 
-                                padding: '0.8rem 1.5rem', 
-                                borderRadius: '50px', 
+                            <div style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '0.8rem',
+                                background: 'white',
+                                padding: '0.8rem 1.5rem',
+                                borderRadius: '50px',
                                 boxShadow: '0 4px 15px rgba(0,0,0,0.05)',
                                 border: '1px solid rgba(214, 140, 107, 0.3)'
                             }}>
                                 <span style={{ background: 'var(--color-secondary)', color: 'white', width: '28px', height: '28px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', fontWeight: 'bold', fontSize: '0.9rem' }}>A</span>
                                 <span style={{ fontSize: '1rem', fontWeight: '500', color: 'var(--color-dark)' }}>One time consultation</span>
                             </div>
-                            <div style={{ 
-                                display: 'flex', 
-                                alignItems: 'center', 
-                                gap: '0.8rem', 
-                                background: 'white', 
-                                padding: '0.8rem 1.5rem', 
-                                borderRadius: '50px', 
+                            <div style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '0.8rem',
+                                background: 'white',
+                                padding: '0.8rem 1.5rem',
+                                borderRadius: '50px',
                                 boxShadow: '0 4px 15px rgba(0,0,0,0.05)',
                                 border: '1px solid rgba(93, 112, 82, 0.3)'
                             }}>

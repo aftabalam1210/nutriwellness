@@ -19,8 +19,13 @@ const TDEECalculator = () => {
             } else {
                 bmr = 10 * weight + 6.25 * height - 5 * age - 161;
             }
+            const bmrRounded = Math.round(bmr);
             const tdee = Math.round(bmr * parseFloat(activity));
-            setResult(tdee);
+            setResult({
+                bmr: bmrRounded,
+                tee: tdee,
+                pal: parseFloat(activity)
+            });
         }
     };
 
@@ -85,20 +90,20 @@ const TDEECalculator = () => {
                         </div>
 
                         <div className="input-group full-width">
-                            <label>Activity Level</label>
+                            <label>Activity Level (PAL)</label>
                             <select value={activity} onChange={(e) => setActivity(e.target.value)} required>
-                                <option value="1.2">Sedentary (little/no exercise)</option>
-                                <option value="1.375">Light (1-3 days/week)</option>
-                                <option value="1.55">Moderate (3-5 days/week)</option>
-                                <option value="1.725">Very Active (6-7 days/week)</option>
-                                <option value="1.9">Extra Active (physical job/2x training)</option>
+                                <option value="1.2">Sedentary (Primarily sitting/lying) = 1.2</option>
+                                <option value="1.375">Lightly active (Sedentary job with some walking, light domestic chores, or light exercise 1–2 days/week) = 1.375</option>
+                                <option value="1.55">Moderately active [Active daily routine (e.g., walking, construction work) or moderate exercise 3–5 days/week] = 1.55</option>
+                                <option value="1.725">Active (workout 7days/week) = 1.725</option>
+                                <option value="1.9">Very active (Physically demanding job or intense training/sports daily) = 1.9</option>
                             </select>
                         </div>
 
                         <div className="tdee-actions">
                             <button type="submit" className="btn btn-primary">
                                 <Calculator size={18} style={{ marginRight: '8px' }} />
-                                Calculate
+                                Calculate TEE
                             </button>
                             <button type="button" className="btn btn-outline" onClick={reset}>
                                 <RefreshCw size={18} />
@@ -109,18 +114,39 @@ const TDEECalculator = () => {
 
                 <div className="tdee-result-card">
                     {result ? (
-                        <div className="result-display fade-in">
-                            <div className="tdee-label">Maintenance Calories</div>
-                            <div className="tdee-value">{result}</div>
-                            <div className="tdee-unit">kcal/day</div>
-                            <p className="tdee-message">
-                                This is your estimated daily calorie needs to maintain your current weight.
-                            </p>
+                        <div className="tee-result-display fade-in">
+                            <div className="tee-result-header">
+                                <div className="tdee-label">Total Energy Expenditure (TEE)</div>
+                                <div className="tdee-value">{result.tee}</div>
+                                <div className="tdee-unit">kcal/day</div>
+                            </div>
+                            
+                            <div className="tee-breakdown">
+                                <h4>Energy Formula Breakdown</h4>
+                                <div className="formula-box">
+                                    TEE = BMR &times; PAL
+                                </div>
+                                <div className="tee-row">
+                                    <span>Basal Metabolic Rate (BMR):</span>
+                                    <strong>{result.bmr} kcal</strong>
+                                </div>
+                                <div className="tee-row">
+                                    <span>Physical Activity Level (PAL):</span>
+                                    <strong>{result.pal}</strong>
+                                </div>
+                                <div className="tee-row tee-total-row">
+                                    <span>Calculation:</span>
+                                    <span>{result.bmr} &times; {result.pal} = <strong>{result.tee} kcal</strong></span>
+                                </div>
+                                <p className="tee-note">
+                                    * BMR is the energy your body burns at complete rest. PAL (Physical Activity Level) represents your daily activity multiplier. TEE is the total calories you burn per day.
+                                </p>
+                            </div>
                         </div>
                     ) : (
                         <div className="result-placeholder">
-                            <Calculator size={64} opacity={0.2} />
-                            <p>Enter your details to calculate your TDEE</p>
+                            <Calculator size={64} opacity={0.2} style={{ marginBottom: '1rem' }} />
+                            <p>Enter your details and activity level (PAL) to calculate your TEE (Total Energy Expenditure)</p>
                         </div>
                     )}
                 </div>

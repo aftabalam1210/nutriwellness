@@ -7,6 +7,7 @@ import Recipes from '../components/Recipes';
 import BMICalculator from '../components/BMICalculator';
 import TDEECalculator from '../components/TDEECalculator';
 import Testimonials from '../components/Testimonials';
+import CasesSolved from '../components/CasesSolved';
 import Blog from '../components/Blog';
 import Contact from '../components/Contact';
 
@@ -21,7 +22,8 @@ const Home = () => {
             <section id="bmi"><BMICalculator /></section>
             <section id="tdee"><TDEECalculator /></section>
             <section id="testimonials"><Testimonials /></section>
-            <section id="blog"><Blog /></section>
+            <section id="cases-solved"><CasesSolved /></section>
+            <section id="articles"><Blog /></section>
             <section id="contact"><Contact /></section>
         </>
     );

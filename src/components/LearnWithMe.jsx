@@ -10,10 +10,8 @@ const LearnWithMe = () => {
     };
 
     const learnItems = [
-        { name: 'Podcast', link: '#' },
-        { name: 'Videos', link: '#' },
         { name: 'Recipe', link: '#recipes' },
-        { name: 'Blogs', link: '#blog' }
+        { name: 'Articles', link: '#articles' }
     ];
 
     return (

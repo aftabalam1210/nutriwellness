@@ -15,14 +15,14 @@ const Contact = () => {
         isOpen: false,
         selected: ''
     });
-    
+
     const concernDropdownRef = useRef(null);
     const genderDropdownRef = useRef(null);
     const planDropdownRef = useRef(null);
 
     const concerns = [
         { value: 'weight', label: 'Weight management' },
-        { value: 'pcos', label: 'PCOS' },
+        { value: 'pmos', label: 'PMOS' },
         { value: 'cholesterol', label: 'Cholesterol Management' },
         { value: 'diabetes', label: 'Diabetes/Pre-Diabetes' },
         { value: 'hypertension', label: 'Hypertension' },
@@ -34,7 +34,7 @@ const Contact = () => {
     const genders = [
         { value: 'female', label: 'Female' },
         { value: 'male', label: 'Male' },
-        { value: 'other', label: 'Other / Prefer not to say' }
+        // { value: 'other', label: 'Other / Prefer not to say' }
     ];
 
     const plans = [
@@ -66,7 +66,7 @@ const Contact = () => {
 
         document.addEventListener('mousedown', handleClickOutside);
         window.addEventListener('planSelected', handlePlanSelected);
-        
+
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
             window.removeEventListener('planSelected', handlePlanSelected);
@@ -159,7 +159,7 @@ const Contact = () => {
 
                 <form className="contact__form">
                     <h3 className="form-title">To Consult</h3>
-                    
+
                     <div className="form-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                         <div className="form-group">
                             <label>Name</label>
@@ -185,9 +185,9 @@ const Contact = () => {
                     <div className="form-group">
                         <label>Gender</label>
                         <input type="hidden" name="gender" value={genderState.selected} />
-                        
+
                         <div className="custom-dropdown" ref={genderDropdownRef}>
-                            <div 
+                            <div
                                 className={`custom-dropdown-header ${genderState.isOpen ? 'open' : ''}`}
                                 onClick={handleGenderToggle}
                             >
@@ -196,10 +196,10 @@ const Contact = () => {
                                 </span>
                                 <ChevronDown size={20} className="dropdown-icon" />
                             </div>
-                            
+
                             <div className={`custom-dropdown-list ${genderState.isOpen ? 'open' : ''}`}>
                                 {genders.map(gender => (
-                                    <div 
+                                    <div
                                         key={gender.value}
                                         className={`custom-dropdown-pill ${genderState.selected === gender.value ? 'selected' : ''}`}
                                         onClick={(e) => handleGenderSelect(gender.value, e)}
@@ -214,9 +214,9 @@ const Contact = () => {
                     <div className="form-group">
                         <label>Interested Plan</label>
                         <input type="hidden" name="interested_plan" value={planState.selected} />
-                        
+
                         <div className="custom-dropdown" ref={planDropdownRef}>
-                            <div 
+                            <div
                                 className={`custom-dropdown-header ${planState.isOpen ? 'open' : ''}`}
                                 onClick={handlePlanToggle}
                             >
@@ -225,10 +225,10 @@ const Contact = () => {
                                 </span>
                                 <ChevronDown size={20} className="dropdown-icon" />
                             </div>
-                            
+
                             <div className={`custom-dropdown-list ${planState.isOpen ? 'open' : ''}`}>
                                 {plans.map(plan => (
-                                    <div 
+                                    <div
                                         key={plan.value}
                                         className={`custom-dropdown-pill ${planState.selected === plan.value ? 'selected' : ''}`}
                                         onClick={(e) => handlePlanSelect(plan.value, e)}
@@ -243,9 +243,9 @@ const Contact = () => {
                     <div className="form-group">
                         <label>Choose your primary concern</label>
                         <input type="hidden" name="primary_concern" value={concernState.selected} />
-                        
+
                         <div className="custom-dropdown" ref={concernDropdownRef}>
-                            <div 
+                            <div
                                 className={`custom-dropdown-header ${concernState.isOpen ? 'open' : ''}`}
                                 onClick={handleConcernToggle}
                             >
@@ -254,10 +254,10 @@ const Contact = () => {
                                 </span>
                                 <ChevronDown size={20} className="dropdown-icon" />
                             </div>
-                            
+
                             <div className={`custom-dropdown-list ${concernState.isOpen ? 'open' : ''}`}>
                                 {concerns.map(concern => (
-                                    <div 
+                                    <div
                                         key={concern.value}
                                         className={`custom-dropdown-pill ${concernState.selected === concern.value ? 'selected' : ''}`}
                                         onClick={(e) => handleConcernSelect(concern.value, e)}

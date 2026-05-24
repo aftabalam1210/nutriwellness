@@ -76,10 +76,8 @@ const Navbar = () => {
                 Learn With Me <ChevronDown size={14} className={`chevron ${dropdownOpen ? 'rotated' : ''}`} />
               </div>
               <ul className="dropdown-menu">
-                <li><Link to="/podcast">Podcast</Link></li>
-                <li><Link to="/videos">Videos</Link></li>
                 <li><Link to="/recipes">Full Recipes</Link></li>
-                <li><Link to="/blogs">Blogs</Link></li>
+                <li><Link to="/articles">Articles</Link></li>
               </ul>
             </li>
 

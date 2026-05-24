@@ -4,6 +4,7 @@ export const recipes = [
     {
         id: 1,
         title: "Moong Paneer Salad",
+        isVeg: true,
         // Using a generic healthy salad image for placeholder as provided image is document text
         image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=800",
         time: "15 min",
@@ -55,6 +56,7 @@ export const recipes = [
     {
         id: 2,
         title: "Chickpea Salad",
+        isVeg: true,
         // Using a generic chickpea salad image
         image: "https://plus.unsplash.com/premium_photo-1673590981815-bdd1a5fceca1?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         time: "10 min",
@@ -102,49 +104,50 @@ export const recipes = [
     },
     {
         id: 3,
-        title: "Berry Antioxidant Smoothie",
-        image: "https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?auto=format&fit=crop&q=80&w=800",
-        time: "5 min",
-        cal: "210 kcal",
-        category: "Drink",
-        url: "#",
-        description: "Refresh and recharge with this antioxidant-rich smoothie. A sweet and tangy blend of mixed berries, spinach, and almond milk for a healthy glow.",
-        ingredients: [
-            "1 cup Mixed Berries (frozen)",
-            "1 handful Spinach",
-            "1 cup Almond Milk (unsweetened)",
-            "1 tbsp Chia Seeds",
-            "1 tsp Honey (optional)"
-        ],
-        instructions: [
-            "Add all ingredients to a high-speed blender.",
-            "Blend on high until smooth and creamy.",
-            "Pour into a glass and top with a few fresh berries if desired.",
-            "Serve immediately for best texture."
-        ]
-    },
-    {
-        id: 4,
-        title: "Grilled Salmon Bowl",
-        image: "https://lexiscleankitchen.com/wp-content/uploads/2024/07/grilled-salmon-bowls-3-scaled.jpg",
-        time: "35 min",
-        cal: "550 kcal",
+        title: "Herb Grilled Chicken Bowl",
+        isVeg: false,
+        // Using a high quality grilled chicken bowl image
+        image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=800",
+        time: "25 min",
+        cal: "420 kcal",
         category: "Dinner",
         url: "#",
-        description: "A heart-healthy dinner featuring omega-3 rich salmon, steamed greens, and brown rice. Simple, filling, and delicious.",
+        description: "Tender grilled chicken breast seasoned with aromatic herbs, served alongside roasted vegetables and a side of light lemon-herb vinaigrette.",
+        nutrition: {
+            energy: "420.0 kcal",
+            carbohydrates: "12.0 g",
+            protein: "38.0 g",
+            fat: "10.0 g",
+            calcium: "60.0 mg"
+        },
         ingredients: [
-            "1 Salmon Fillet (6oz)",
-            "1 cup Brown Rice, cooked",
-            "1 cup Steamed Broccoli",
-            "1 tsp Soy Sauce",
-            "Sesame seeds for garnish"
+            {
+                section: "For the base",
+                items: [
+                    "150g Chicken Breast, skinless",
+                    "1/2 cup Broccoli florets",
+                    "1/2 cup Bell peppers, sliced",
+                    "1 tsp Olive oil",
+                    "Mixed herbs (Oregano, Thyme)"
+                ]
+            },
+            {
+                section: "For Marinade",
+                items: [
+                    "1 tbsp Lemon juice",
+                    "1 clove Garlic, minced",
+                    "1/2 tsp Black pepper",
+                    "1/2 tsp Salt"
+                ]
+            }
         ],
         instructions: [
-            "Season salmon fillet with salt, pepper, and a little olive oil.",
-            "Grill or pan-sear salmon for 4-5 minutes per side until cooked through.",
-            "Arrange a bowl with brown rice and steamed broccoli.",
-            "Place salmon on top and drizzle with soy sauce.",
-            "Garnish with sesame seeds and serve warm."
+            "Clean and score the chicken breast, then marinate with lemon juice, garlic, mixed herbs, salt, and pepper for 15 minutes.",
+            "Heat olive oil in a grill pan over medium heat.",
+            "Grill the chicken for 6-7 minutes on each side until fully cooked and juices run clear.",
+            "In the same pan, toss broccoli and bell peppers, sautéing for 3-4 minutes until tender-crisp.",
+            "Slice the grilled chicken and serve in a bowl alongside the sautéed vegetables.",
+            "Drizzle with remaining lemon juice and serve warm."
         ]
     }
 ];
@@ -226,5 +229,47 @@ export const testimonials = [
         text: "Truly professional guidance. The nutritionist was always available to answer my questions and keep me motivated.",
         role: "Lifestyle Reset",
         image: "https://ui-avatars.com/api/?name=Emma+Wilson&background=random"
+    }
+];
+
+export const solvedCases = [
+    {
+        patientName: "Umesh",
+        tagline: "Fatty Liver & Hypertension Reversal",
+        role: "Liver Health & Weight Loss",
+        quote: "My health was in very bad condition before I met Shreya. I was suffering from fatty liver, high uric acid, sugar problem, high cholesterol, increased weight, and BP problems. But after meeting her and following her guidance, my health improved a lot. My FibroScan score came down from 17 to 11, and my BP started staying completely normal and uric acid almost came to normal, my weight reduced, all in just 1 month. Now I am feeling much healthier and better than before. Thank you so much, Shreya, for your support and guidance.",
+        easyWords: "Umesh came to us suffering from severe metabolic strain including Grade 3 fatty liver, Stage 2 hypertension, elevated uric acid, hypercholesterolemia, and excess body weight. Through a tailored 1-month clinical nutrition plan focused on liver detoxification, blood pressure regulation, and uric acid reduction, Umesh achieved remarkable clinical improvements without extra medication.",
+        parameters: [
+            { name: "FibroScan Score (Liver Stiffness)", before: "17 kPa", after: "11 kPa", status: "Significant Reversal" },
+            { name: "Blood Pressure", before: "150/95 mmHg", after: "120/80 mmHg", status: "Normal" },
+            { name: "Uric Acid", before: "8.5 mg/dL", after: "6.0 mg/dL", status: "Healthy Range" },
+            { name: "Body Weight", before: "88 kg", after: "83 kg", status: "-5 kg in 30 Days" },
+        ]
+    },
+    {
+        patientName: "Keshav",
+        tagline: "Chronic Bloating & Sluggishness Elimination",
+        role: "Digestive Health & Energy Reset",
+        quote: "Having a change in the diet actually made me understand where I am missing out on my nutrition. I was concerned about my weight gain, bloating and sluggishness during the day. Following the diet suggested by Shreya really helped me with those problems. I especially liked the regular follow ups since, in a way, they held me accountable for my choices without being judged.",
+        easyWords: "Keshav struggled with severe gut inflammation, abdominal bloating, daytime sluggishness, and creeping weight gain. We identified core nutritional deficiencies and inflammatory food triggers. By implementing a prebiotic/probiotic rich, gut-healing meal plan and providing structured follow-ups, Keshav eliminated bloating, restored peak energy, and lost weight sustainably.",
+        parameters: [
+            { name: "Bloating Frequency", before: "Daily (Severe)", after: "Rare / None", status: "Resolved" },
+            { name: "Daytime Energy Level", before: "Low (Sluggish)", after: "High & Vibrant", status: "Fully Restored" },
+            { name: "Body Weight", before: "82 kg", after: "76 kg", status: "-6 kg (Sustainable)" },
+            { name: "Sleep Quality", before: "Poor & Disrupted", after: "Deep & Restful", status: "8 Hrs/Night" }
+        ]
+    },
+    {
+        patientName: "Anoop",
+        tagline: "Prediabetes & Cholesterol Management",
+        role: "Insulin Sensitivity & Lipids",
+        quote: "I had tried multiple crash diets but always gained the weight back. Shreya's science-based, holistic approach was eye-opening. Not only did I manage to reverse my prediabetic HbA1c levels, but my cholesterol is finally in the green. I eat fully, feel satisfied, and have more energy than ever before.",
+        easyWords: "Anoop presented with chronic insulin resistance (prediabetes) and hyperlipidemia. He was trapped in a cycle of crash diets. We designed a low-glycemic index, high-fiber clinical diet that stabilized blood sugar, optimized lipid levels, and stimulated long-term insulin sensitivity without restrictive calorie counting.",
+        parameters: [
+            { name: "HbA1c (Blood Sugar)", before: "6.4% (Prediabetic)", after: "5.5% (Healthy)", status: "Prediabetes Reversed" },
+            { name: "Total Cholesterol", before: "240 mg/dL", after: "190 mg/dL", status: "Optimal Range" },
+            { name: "Triglycerides", before: "195 mg/dL", after: "140 mg/dL", status: "Healthy Range" },
+            { name: "Body Weight", before: "78 kg", after: "71 kg", status: "-7 kg Reached" }
+        ]
     }
 ];

@@ -33,7 +33,12 @@ const RecipeModal = ({ recipe, onClose }) => {
                 <div className="recipe-modal__header">
                     <img src={recipe.image} alt={recipe.title} className="recipe-modal__image" />
                     <div className="recipe-modal__title-box">
-                        <h2>{recipe.title}</h2>
+                        <div className="recipe-modal__title-row" style={{ display: 'flex', alignItems: 'center', gap: '15px', flexWrap: 'wrap', marginBottom: '0.5rem' }}>
+                            <h2 style={{ margin: 0 }}>{recipe.title}</h2>
+                            <span className={`recipe-type-badge ${recipe.isVeg ? 'veg' : 'non-veg'}`} title={recipe.isVeg ? 'Vegetarian' : 'Non-Vegetarian'} style={{ border: `2px solid ${recipe.isVeg ? '#2e7d32' : '#c62828'}`, background: 'white', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '2px', flexShrink: 0 }}>
+                                <span className="dot" style={{ width: '10px', height: '10px', backgroundColor: recipe.isVeg ? '#2e7d32' : '#c62828', borderRadius: '50%', display: 'block' }}></span>
+                            </span>
+                        </div>
 
                         <div className="recipe-meta-primary">
                             <span><Clock size={18} /> {recipe.time}</span>

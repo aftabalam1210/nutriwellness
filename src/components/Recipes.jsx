@@ -24,7 +24,12 @@ const Recipes = () => {
                                 <span className="category-tag">{recipe.category}</span>
                             </div>
                             <div className="recipe-content">
-                                <h3>{recipe.title}</h3>
+                                <div className="recipe-title-row">
+                                    <h3>{recipe.title}</h3>
+                                    <span className={`recipe-type-badge ${recipe.isVeg ? 'veg' : 'non-veg'}`} title={recipe.isVeg ? 'Vegetarian' : 'Non-Vegetarian'}>
+                                        <span className="dot"></span>
+                                    </span>
+                                </div>
                                 <div className="recipe-meta">
                                     <span><Clock size={16} /> {recipe.time}</span>
                                     <span><Flame size={16} /> {recipe.cal}</span>

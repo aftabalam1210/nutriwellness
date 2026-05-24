@@ -8,7 +8,7 @@ const Blog = () => {
     const [selectedPost, setSelectedPost] = useState(null);
 
     return (
-        <section className="blog" id="blog">
+        <section className="blog" id="articles">
             <div className="container">
 
                 <div className="section-header text-center">

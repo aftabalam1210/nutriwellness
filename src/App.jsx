@@ -7,10 +7,8 @@ import ScrollToHash from './components/ScrollToHash';
 
 // Import Pages
 import Home from './pages/Home';
-import Podcast from './pages/Podcast';
-import Videos from './pages/Videos';
 import RecipesPage from './pages/RecipesPage';
-import BlogsPage from './pages/BlogsPage';
+import ArticlesPage from './pages/ArticlesPage';
 
 function App() {
   return (
@@ -19,10 +17,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/podcast" element={<Podcast />} />
-        <Route path="/videos" element={<Videos />} />
         <Route path="/recipes" element={<RecipesPage />} />
-        <Route path="/blogs" element={<BlogsPage />} />
+        <Route path="/articles" element={<ArticlesPage />} />
       </Routes>
       <Footer />
       <AudioPlayer />
