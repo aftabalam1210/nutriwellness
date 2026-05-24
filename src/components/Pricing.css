@@ -1,8 +1,10 @@
 /* Pricing.css */
 .pricing {
     padding: 80px 0;
-    background-color: white;
-    /* Clean white background like image */
+    background-image: url('../assets/WhatsApp Image 2026-05-24 at 12.08.42 PM.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* Toggle Switch */
