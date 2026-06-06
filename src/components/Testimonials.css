@@ -72,7 +72,7 @@
     object-fit: cover;
     border: 3px solid var(--color-primary);
     margin-bottom: 1.2rem;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .author-info h4 {
@@ -101,13 +101,13 @@
 
 /* Updated Typography for Horizontal Layout */
 .testimonial-text {
-    font-size: 1.25rem; 
+    font-size: 1.25rem;
     font-family: 'Raleway', var(--font-body), sans-serif;
-    font-style: normal; 
+    font-style: normal;
     font-weight: 500;
-    color: #444; 
+    color: #444;
     margin: 0;
-    line-height: 1.8; 
+    line-height: 1.8;
 }
 
 /* Arrows Styling */
@@ -130,7 +130,7 @@
 .slider-arrow:hover {
     background: var(--color-primary);
     color: white;
-    transform: scale(1.1); 
+    transform: scale(1.1);
     box-shadow: 0 4px 15px rgba(93, 112, 82, 0.3);
 }
 
@@ -140,7 +140,7 @@
         padding: 3rem 2.5rem;
         gap: 2rem;
     }
-    
+
     .testimonial-author-col {
         flex: 0 0 auto;
         width: 100%;
@@ -159,11 +159,11 @@
         width: 75px;
         height: 75px;
     }
-    
+
     .quote-icon-sidebar {
         display: none;
     }
-    
+
     .testimonial-text {
         font-size: 1.1rem;
     }
@@ -174,26 +174,27 @@
         flex-direction: column;
         gap: 1.5rem;
     }
-    
+
     .slider-arrow {
         position: absolute;
         bottom: -25px;
         z-index: 20;
     }
-    
+
     .slider-arrow.prev {
         left: 20%;
     }
-    
+
     .slider-arrow.next {
         right: 20%;
     }
-    
+
     .testimonial-slide {
         padding: 0.5rem;
     }
-    
+
     .testimonials {
-        padding-bottom: 120px; /* Make room for arrows on mobile */
+        padding-bottom: 120px;
+        /* Make room for arrows on mobile */
     }
 }

@@ -8,7 +8,7 @@ const About = () => {
             <div className="container about__container">
                 <div className="about__image">
                     <div className="about__image-placeholder">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800" alt="Holistic Consultation Session" />
+                        <img src="/assets/profile.jpeg" alt="Profile" />
                     </div>
 
                     {/* Floating Credibility Badge */}
