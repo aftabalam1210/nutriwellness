@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './Contact.css';
-import { Mail, Phone, MapPin, Send, MessageCircle, ChevronDown } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, MessageCircle, ChevronDown, CheckCircle } from 'lucide-react';
 
 const Contact = () => {
     const [concernState, setConcernState] = useState({
@@ -15,6 +15,14 @@ const Contact = () => {
         isOpen: false,
         selected: ''
     });
+
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [submittedName, setSubmittedName] = useState('');
+    const [nameVal, setNameVal] = useState('');
+    const [locationVal, setLocationVal] = useState('');
+    const [phoneVal, setPhoneVal] = useState('');
+    const [emailVal, setEmailVal] = useState('');
+    const [messageVal, setMessageVal] = useState('');
 
     const concernDropdownRef = useRef(null);
     const genderDropdownRef = useRef(null);
@@ -121,6 +129,11 @@ const Contact = () => {
         return plan ? plan.label : 'Select Program / Plan';
     };
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setSubmittedName(nameVal);
+        setIsSubmitted(true);
+    };
 
     return (
         <section className="contact" id="contact">
@@ -157,127 +170,191 @@ const Contact = () => {
                     </div>
                 </div>
 
-                <form className="contact__form">
-                    <h3 className="form-title">To Consult</h3>
+                {isSubmitted ? (
+                    <div className="contact__success-card fade-in" style={{
+                        background: 'var(--color-surface)',
+                        padding: '3rem',
+                        borderRadius: 'var(--radius-lg)',
+                        boxShadow: 'var(--shadow-md)',
+                        textAlign: 'center',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '1.5rem',
+                        border: '1px solid var(--color-accent)',
+                        animation: 'fadeIn 0.5s ease',
+                        flex: 1
+                    }}>
+                        <div className="success-icon-wrapper" style={{
+                            background: 'rgba(93, 112, 82, 0.1)',
+                            color: 'var(--color-primary)',
+                            padding: '1.5rem',
+                            borderRadius: '50%',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            marginBottom: '1rem'
+                        }}>
+                            <CheckCircle size={48} />
+                        </div>
+                        <h3 className="success-title" style={{
+                            fontSize: '2rem',
+                            color: 'var(--color-dark)',
+                            margin: 0,
+                            fontFamily: 'var(--font-heading)'
+                        }}>Thank You, {submittedName}!</h3>
+                        <p className="success-text" style={{
+                            color: 'var(--color-text)',
+                            fontSize: '1.1rem',
+                            lineHeight: '1.6',
+                            margin: 0,
+                            maxWidth: '400px'
+                        }}>
+                            Your consultation request has been successfully received. We will review your details and reach out to you via Phone/WhatsApp within 24 hours.
+                        </p>
+                        <button 
+                            type="button"
+                            className="btn btn-primary" 
+                            style={{ marginTop: '1rem' }}
+                            onClick={() => {
+                                setIsSubmitted(false);
+                                setNameVal('');
+                                setLocationVal('');
+                                setPhoneVal('');
+                                setEmailVal('');
+                                setConcernState({ isOpen: false, selected: '' });
+                                setGenderState({ isOpen: false, selected: '' });
+                                setPlanState({ isOpen: false, selected: '' });
+                                setMessageVal('');
+                            }}
+                        >
+                            Submit Another Request
+                        </button>
+                    </div>
+                ) : (
+                    <form className="contact__form" onSubmit={handleSubmit}>
+                        <h3 className="form-title">To Consult</h3>
 
-                    <div className="form-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                        <div className="form-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                            <div className="form-group">
+                                <label>Name</label>
+                                <input type="text" placeholder="Your Name" value={nameVal} onChange={(e) => setNameVal(e.target.value)} required />
+                            </div>
+                            <div className="form-group">
+                                <label>Location</label>
+                                <input type="text" placeholder="Your City/Country" value={locationVal} onChange={(e) => setLocationVal(e.target.value)} required />
+                            </div>
+                        </div>
+
+                        <div className="form-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                            <div className="form-group">
+                                <label>Phone</label>
+                                <input type="tel" placeholder="Your Phone Number" value={phoneVal} onChange={(e) => setPhoneVal(e.target.value)} required />
+                            </div>
+                            <div className="form-group">
+                                <label>Email</label>
+                                <input type="email" placeholder="Your Email Address" value={emailVal} onChange={(e) => setEmailVal(e.target.value)} required />
+                            </div>
+                        </div>
+
                         <div className="form-group">
-                            <label>Name</label>
-                            <input type="text" placeholder="Your Name" required />
+                            <label>Gender</label>
+                            <input type="hidden" name="gender" value={genderState.selected} />
+
+                            <div className="custom-dropdown" ref={genderDropdownRef}>
+                                <div
+                                    className={`custom-dropdown-header ${genderState.isOpen ? 'open' : ''}`}
+                                    onClick={handleGenderToggle}
+                                >
+                                    <span style={{ color: genderState.selected ? 'var(--color-text)' : '#999' }}>
+                                        {getSelectedGenderLabel()}
+                                    </span>
+                                    <ChevronDown size={20} className="dropdown-icon" />
+                                </div>
+
+                                <div className={`custom-dropdown-list ${genderState.isOpen ? 'open' : ''}`}>
+                                    {genders.map(gender => (
+                                        <div
+                                            key={gender.value}
+                                            className={`custom-dropdown-pill ${genderState.selected === gender.value ? 'selected' : ''}`}
+                                            onClick={(e) => handleGenderSelect(gender.value, e)}
+                                        >
+                                            {gender.label}
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
                         </div>
+
                         <div className="form-group">
-                            <label>Location</label>
-                            <input type="text" placeholder="Your City/Country" required />
-                        </div>
-                    </div>
+                            <label>Interested Plan</label>
+                            <input type="hidden" name="interested_plan" value={planState.selected} />
 
-                    <div className="form-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                            <div className="custom-dropdown" ref={planDropdownRef}>
+                                <div
+                                    className={`custom-dropdown-header ${planState.isOpen ? 'open' : ''}`}
+                                    onClick={handlePlanToggle}
+                                >
+                                    <span style={{ color: planState.selected ? 'var(--color-text)' : '#999' }}>
+                                        {getSelectedPlanLabel()}
+                                    </span>
+                                    <ChevronDown size={20} className="dropdown-icon" />
+                                </div>
+
+                                <div className={`custom-dropdown-list ${planState.isOpen ? 'open' : ''}`}>
+                                    {plans.map(plan => (
+                                        <div
+                                            key={plan.value}
+                                            className={`custom-dropdown-pill ${planState.selected === plan.value ? 'selected' : ''}`}
+                                            onClick={(e) => handlePlanSelect(plan.value, e)}
+                                        >
+                                            {plan.label}
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+
                         <div className="form-group">
-                            <label>Phone</label>
-                            <input type="tel" placeholder="Your Phone Number" required />
+                            <label>Choose your primary concern</label>
+                            <input type="hidden" name="primary_concern" value={concernState.selected} />
+
+                            <div className="custom-dropdown" ref={concernDropdownRef}>
+                                <div
+                                    className={`custom-dropdown-header ${concernState.isOpen ? 'open' : ''}`}
+                                    onClick={handleConcernToggle}
+                                >
+                                    <span style={{ color: concernState.selected ? 'var(--color-text)' : '#999' }}>
+                                        {getSelectedLabel()}
+                                    </span>
+                                    <ChevronDown size={20} className="dropdown-icon" />
+                                </div>
+
+                                <div className={`custom-dropdown-list ${concernState.isOpen ? 'open' : ''}`}>
+                                    {concerns.map(concern => (
+                                        <div
+                                            key={concern.value}
+                                            className={`custom-dropdown-pill ${concernState.selected === concern.value ? 'selected' : ''}`}
+                                            onClick={(e) => handleConcernSelect(concern.value, e)}
+                                        >
+                                            {concern.label}
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
                         </div>
+
                         <div className="form-group">
-                            <label>Email</label>
-                            <input type="email" placeholder="Your Email Address" required />
+                            <label>Can’t choose? Write additional information here</label>
+                            <textarea placeholder="Briefly describe your goals or medical history..." rows="4" value={messageVal} onChange={(e) => setMessageVal(e.target.value)}></textarea>
                         </div>
-                    </div>
 
-                    <div className="form-group">
-                        <label>Gender</label>
-                        <input type="hidden" name="gender" value={genderState.selected} />
-
-                        <div className="custom-dropdown" ref={genderDropdownRef}>
-                            <div
-                                className={`custom-dropdown-header ${genderState.isOpen ? 'open' : ''}`}
-                                onClick={handleGenderToggle}
-                            >
-                                <span style={{ color: genderState.selected ? 'var(--color-text)' : '#999' }}>
-                                    {getSelectedGenderLabel()}
-                                </span>
-                                <ChevronDown size={20} className="dropdown-icon" />
-                            </div>
-
-                            <div className={`custom-dropdown-list ${genderState.isOpen ? 'open' : ''}`}>
-                                {genders.map(gender => (
-                                    <div
-                                        key={gender.value}
-                                        className={`custom-dropdown-pill ${genderState.selected === gender.value ? 'selected' : ''}`}
-                                        onClick={(e) => handleGenderSelect(gender.value, e)}
-                                    >
-                                        {gender.label}
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="form-group">
-                        <label>Interested Plan</label>
-                        <input type="hidden" name="interested_plan" value={planState.selected} />
-
-                        <div className="custom-dropdown" ref={planDropdownRef}>
-                            <div
-                                className={`custom-dropdown-header ${planState.isOpen ? 'open' : ''}`}
-                                onClick={handlePlanToggle}
-                            >
-                                <span style={{ color: planState.selected ? 'var(--color-text)' : '#999' }}>
-                                    {getSelectedPlanLabel()}
-                                </span>
-                                <ChevronDown size={20} className="dropdown-icon" />
-                            </div>
-
-                            <div className={`custom-dropdown-list ${planState.isOpen ? 'open' : ''}`}>
-                                {plans.map(plan => (
-                                    <div
-                                        key={plan.value}
-                                        className={`custom-dropdown-pill ${planState.selected === plan.value ? 'selected' : ''}`}
-                                        onClick={(e) => handlePlanSelect(plan.value, e)}
-                                    >
-                                        {plan.label}
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="form-group">
-                        <label>Choose your primary concern</label>
-                        <input type="hidden" name="primary_concern" value={concernState.selected} />
-
-                        <div className="custom-dropdown" ref={concernDropdownRef}>
-                            <div
-                                className={`custom-dropdown-header ${concernState.isOpen ? 'open' : ''}`}
-                                onClick={handleConcernToggle}
-                            >
-                                <span style={{ color: concernState.selected ? 'var(--color-text)' : '#999' }}>
-                                    {getSelectedLabel()}
-                                </span>
-                                <ChevronDown size={20} className="dropdown-icon" />
-                            </div>
-
-                            <div className={`custom-dropdown-list ${concernState.isOpen ? 'open' : ''}`}>
-                                {concerns.map(concern => (
-                                    <div
-                                        key={concern.value}
-                                        className={`custom-dropdown-pill ${concernState.selected === concern.value ? 'selected' : ''}`}
-                                        onClick={(e) => handleConcernSelect(concern.value, e)}
-                                    >
-                                        {concern.label}
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="form-group">
-                        <label>Can’t choose? Write additional information here</label>
-                        <textarea placeholder="Briefly describe your goals or medical history..." rows="4"></textarea>
-                    </div>
-
-                    <button type="submit" className="btn btn-primary" style={{ width: '100%', marginTop: '0.5rem' }}>
-                        Submit Details <Send size={16} style={{ marginLeft: '8px' }} />
-                    </button>
-                </form>
+                        <button type="submit" className="btn btn-primary" style={{ width: '100%', marginTop: '0.5rem' }}>
+                            Submit Details <Send size={16} style={{ marginLeft: '8px' }} />
+                        </button>
+                    </form>
+                )}
 
             </div>
         </section>

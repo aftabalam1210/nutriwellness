@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './Recipes.css';
 import { Clock, Flame, ChefHat } from 'lucide-react';
 import { recipes } from '../data'; // Import from central data
@@ -6,6 +7,9 @@ import RecipeModal from './RecipeModal';
 
 const Recipes = () => {
     const [selectedRecipe, setSelectedRecipe] = useState(null);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const isRecipesPage = location.pathname === '/recipes';
 
     return (
         <section className="recipes" id="recipes">
@@ -45,12 +49,14 @@ const Recipes = () => {
                     ))}
                 </div>
 
-                <div className="text-center" style={{ marginTop: '3rem' }}>
-                    <button className="btn btn-primary">
-                        <ChefHat size={18} style={{ marginRight: '8px' }} />
-                        Browse All Recipes
-                    </button>
-                </div>
+                {!isRecipesPage && (
+                    <div className="text-center" style={{ marginTop: '3rem' }}>
+                        <button className="btn btn-primary" onClick={() => navigate('/recipes')}>
+                            <ChefHat size={18} style={{ marginRight: '8px' }} />
+                            Browse All Recipes
+                        </button>
+                    </div>
+                )}
 
             </div>
 

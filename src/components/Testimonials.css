@@ -1,7 +1,9 @@
 .testimonials {
     padding: 100px 0;
-    background-color: white;
-    background: var(--color-accent); /* Pale Sage */
+    background-image: linear-gradient(rgba(246, 245, 241, 0.85), rgba(246, 245, 241, 0.85)), url('../assets/Happy clients bg.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .testimonials-subtitle {

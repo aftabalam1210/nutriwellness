@@ -5,8 +5,7 @@ export const recipes = [
         id: 1,
         title: "Moong Paneer Salad",
         isVeg: true,
-        // Using a generic healthy salad image for placeholder as provided image is document text
-        image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=800",
+        image: "/assets/moongdal.png",
         time: "15 min",
         cal: "470 kcal",
         category: "Lunch",
@@ -57,8 +56,7 @@ export const recipes = [
         id: 2,
         title: "Chickpea Salad",
         isVeg: true,
-        // Using a generic chickpea salad image
-        image: "https://plus.unsplash.com/premium_photo-1673590981815-bdd1a5fceca1?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        image: "/assets/Chickpea salad.png",
         time: "10 min",
         cal: "316 kcal",
         category: "Lunch",
@@ -235,28 +233,30 @@ export const testimonials = [
 export const solvedCases = [
     {
         patientName: "Umesh",
-        tagline: "Fatty Liver & Hypertension Reversal",
+        tagline: "Hepatic Fibrosis & Grade III Obesity Reversal",
         role: "Liver Health & Weight Loss",
         quote: "My health was in very bad condition before I met Shreya. I was suffering from fatty liver, high uric acid, sugar problem, high cholesterol, increased weight, and BP problems. But after meeting her and following her guidance, my health improved a lot. My FibroScan score came down from 17 to 11, and my BP started staying completely normal and uric acid almost came to normal, my weight reduced, all in just 1 month. Now I am feeling much healthier and better than before. Thank you so much, Shreya, for your support and guidance.",
-        easyWords: "Umesh came to us suffering from severe metabolic strain including Grade 3 fatty liver, Stage 2 hypertension, elevated uric acid, hypercholesterolemia, and excess body weight. Through a tailored 1-month clinical nutrition plan focused on liver detoxification, blood pressure regulation, and uric acid reduction, Umesh achieved remarkable clinical improvements without extra medication.",
+        easyWords: "Umesh came to us with an erratic food schedule and daily consumption of outside food. He was diagnosed with severe hepatic fibrosis (fatty liver), Grade III obesity, pre-diabetes, hyperuricemia, and hypertension. He opted for our 1-month nutrition and lifestyle management plan, following which the positive improvements were observed. Considering the progress, he was advised to continue with our 3-month plan for sustained improvement and better long-term health outcomes.",
         parameters: [
-            { name: "FibroScan Score (Liver Stiffness)", before: "17 kPa", after: "11 kPa", status: "Significant Reversal" },
-            { name: "Blood Pressure", before: "150/95 mmHg", after: "120/80 mmHg", status: "Normal" },
-            { name: "Uric Acid", before: "8.5 mg/dL", after: "6.0 mg/dL", status: "Healthy Range" },
-            { name: "Body Weight", before: "88 kg", after: "83 kg", status: "-5 kg in 30 Days" },
+            { name: "Liver Stiffness (FibroScan)", before: "17.5 kPa", after: "11.2 kPa", status: "Significant Reversal" },
+            { name: "Blood Pressure", before: "150/110 mmHg", after: "120/80 mmHg", status: "Healthy Range" },
+            { name: "Body Weight", before: "86 kg", after: "83.1 kg", status: "-2.9 kg (30 Days)" },
+            { name: "Uric Acid", before: "8.3 mg/dL", after: "7.4 mg/dL", status: "Healthy Range" },
+            { name: "SGPT (Liver Enzyme)", before: "416 U/L", after: "357 U/L", status: "Decreasing" },
+            { name: "SGOT (Liver Enzyme)", before: "132 U/L", after: "118 U/L", status: "Decreasing" }
         ]
     },
     {
         patientName: "Keshav",
-        tagline: "Chronic Bloating & Sluggishness Elimination",
+        tagline: "Pre-Diabetes & Digestive Health Recovery",
         role: "Digestive Health & Energy Reset",
         quote: "Having a change in the diet actually made me understand where I am missing out on my nutrition. I was concerned about my weight gain, bloating and sluggishness during the day. Following the diet suggested by Shreya really helped me with those problems. I especially liked the regular follow ups since, in a way, they held me accountable for my choices without being judged.",
-        easyWords: "Keshav struggled with severe gut inflammation, abdominal bloating, daytime sluggishness, and creeping weight gain. We identified core nutritional deficiencies and inflammatory food triggers. By implementing a prebiotic/probiotic rich, gut-healing meal plan and providing structured follow-ups, Keshav eliminated bloating, restored peak energy, and lost weight sustainably.",
+        easyWords: "Keshav came to us with complaints of bloating, gastric discomfort, acidity, low energy levels, sluggishness, weight gain, and pre-diabetes. He opted for our 1-month nutrition and lifestyle management plan, following which significant improvements were observed. Along with improved blood sugar levels, he also experienced better digestion, reduced bloating and acidity, improved energy levels, and overall well-being.",
         parameters: [
-            { name: "Bloating Frequency", before: "Daily (Severe)", after: "Rare / None", status: "Resolved" },
-            { name: "Daytime Energy Level", before: "Low (Sluggish)", after: "High & Vibrant", status: "Fully Restored" },
-            { name: "Body Weight", before: "82 kg", after: "76 kg", status: "-6 kg (Sustainable)" },
-            { name: "Sleep Quality", before: "Poor & Disrupted", after: "Deep & Restful", status: "8 Hrs/Night" }
+            { name: "Fasting Blood Glucose", before: "102 mg/dL", after: "86 mg/dL", status: "Normal Range" },
+            { name: "Post Prandial Blood Glucose", before: "121 mg/dL", after: "88 mg/dL", status: "Normal Range" },
+            { name: "Digestion & Bloating", before: "Severe Acidity/Bloating", after: "Fully Resolved", status: "Comfortable" },
+            { name: "Energy Levels & Vitality", before: "Low / Sluggish", after: "Vibrant / High", status: "Restored" }
         ]
     },
     {

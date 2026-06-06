@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import './HeroCarousel.css';
@@ -56,6 +57,7 @@ const slides = [
 
 const HeroCarousel = () => {
     const [current, setCurrent] = useState(0);
+    const navigate = useNavigate();
 
     const nextSlide = () => setCurrent((prev) => (prev + 1) % slides.length);
     const prevSlide = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
@@ -65,6 +67,38 @@ const HeroCarousel = () => {
         const timer = setInterval(nextSlide, 7000); // Delayed to 7s for better reading time
         return () => clearInterval(timer);
     }, []);
+
+    const handleCtaClick = (ctaText) => {
+        switch (ctaText) {
+            case "Book a Consultation":
+            case "Start Today":
+                const contactElement = document.getElementById('contact');
+                if (contactElement) {
+                    contactElement.scrollIntoView({ behavior: 'smooth' });
+                }
+                break;
+            case "View Plans":
+                const pricingElement = document.getElementById('pricing');
+                if (pricingElement) {
+                    pricingElement.scrollIntoView({ behavior: 'smooth' });
+                }
+                break;
+            case "Learn to Eat Better":
+                const howItWorksElement = document.getElementById('how-it-works');
+                if (howItWorksElement) {
+                    howItWorksElement.scrollIntoView({ behavior: 'smooth' });
+                }
+                break;
+            case "Explore Recipes":
+                navigate('/recipes');
+                break;
+            case "Read the Articles":
+                navigate('/articles');
+                break;
+            default:
+                break;
+        }
+    };
 
     return (
         <div className="hero-carousel" id="home">
@@ -124,6 +158,7 @@ const HeroCarousel = () => {
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ delay: 0.9 }}
                             className="btn btn-primary"
+                            onClick={() => handleCtaClick(slides[current].cta)}
                         >
                             {slides[current].cta}
                         </motion.button>
