@@ -58,8 +58,8 @@ const plans = [
         appointments: "24 Appointments",
         desc: "For long-term health outcomes",
         price: {
-            INR: "₹16,500",
-            NPR: "रू22,500"
+            INR: "₹15,000",
+            NPR: "रू21,000"
         },
         features: [
             "Weekly appointments for 30 mins (1st is 1 hr)",

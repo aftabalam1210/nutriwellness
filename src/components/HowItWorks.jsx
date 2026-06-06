@@ -36,7 +36,7 @@ const HowItWorks = () => {
         <section className="how-it-works" id="how-it-works">
             <div className="container">
                 <div className="how-it-works__header text-center mb-2">
-                    <h2 className="section-title">How It Works</h2>
+                    <h2 className="section-title center">How It Works</h2>
                     <p className="section-subtitle">Our curated program is designed as a simple 3-stage process.</p>
                 </div>
 

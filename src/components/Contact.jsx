@@ -49,7 +49,7 @@ const Contact = () => {
         { value: 'one-time', label: 'One-time Consultation (₹600 / रू 800)' },
         { value: '1-month', label: '1 Month Program (₹3,000 / रू 4,000)' },
         { value: '3-months', label: '3 Months Program (₹8,000 / रू 11,000)' },
-        { value: '6-months', label: '6 Months Program (₹16,500 / रू 22,500)' },
+        { value: '6-months', label: '6 Months Program (₹15,000 / रू 21,000)' },
         { value: 'undecided', label: 'General / Undecided' }
     ];
 
@@ -137,13 +137,16 @@ const Contact = () => {
 
     return (
         <section className="contact" id="contact">
-            <div className="container contact__container">
-
-                <div className="contact__info">
-                    <h2 className="section-title">Get In Touch</h2>
-                    <p className="contact__desc">
+            <div className="container">
+                <div className="section-header text-center" style={{ marginBottom: '4rem' }}>
+                    <h2 className="section-title center" style={{ color: 'white' }}>Get In Touch</h2>
+                    <p className="contact__desc" style={{ color: 'rgba(255, 255, 255, 0.8)', maxWidth: '600px', margin: '0.5rem auto 0', fontSize: '1.15rem' }}>
                         Ready to start your journey? Share your health goals and we’ll respond within 24 hours.
                     </p>
+                </div>
+                <div className="contact__container">
+
+                    <div className="contact__info">
 
                     <div className="contact__details">
                         <div className="contact__item">
@@ -357,6 +360,7 @@ const Contact = () => {
                     </form>
                 )}
 
+            </div>
             </div>
         </section>
     );

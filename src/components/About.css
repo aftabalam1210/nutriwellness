@@ -14,17 +14,34 @@
 .about__image {
     position: relative;
     width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
 }
 
-/* Image with Arch shape */
-.about__image-placeholder {
+/* Background decorative card */
+.about__image::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: -20px;
     width: 100%;
-    height: 500px;
-    border-radius: 200px 200px 0 0;
-    /* Huge Arch */
-    overflow: hidden;
+    height: 100%;
+    background: var(--color-accent);
+    border-radius: 24px;
+    z-index: 0;
+}
+
+/* Modern image frame with aspect ratio matching the photo */
+.about__image-placeholder {
     position: relative;
+    width: 100%;
+    aspect-ratio: 544 / 566;
+    border-radius: 24px;
+    overflow: hidden;
     box-shadow: var(--shadow-md);
+    border: 8px solid white;
+    background: white;
+    z-index: 1;
 }
 
 .about__image img {
@@ -139,10 +156,6 @@
     .about__container {
         flex-direction: column;
         gap: 3rem;
-    }
-
-    .about__image-placeholder {
-        height: 300px;
     }
 
     .about__floating-badge {
