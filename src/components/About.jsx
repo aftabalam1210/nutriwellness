@@ -10,23 +10,23 @@ const About = () => {
                     <div className="about__image-placeholder">
                         <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800" alt="Holistic Consultation Session" />
                     </div>
-                    
+
                     {/* Floating Credibility Badge */}
-                    <div className="about__floating-badge">
+                    {/* <div className="about__floating-badge">
                         <span className="badge-number">10k+</span>
                         <span className="badge-text">Transformations</span>
-                    </div>
+                    </div> */}
                 </div>
-                
+
                 <div className="about__content">
                     <h2 className="section-title">About the Consultation Program</h2>
                     <p className="about__text">
-                        Our consultations go beyond calorie counting. We do not believe in quick-fix weight loss methods. 
-                        Instead, we focus on helping you understand your overall lifestyle. We look at your eating habits, 
+                        Our consultations go beyond calorie counting. We do not believe in quick-fix weight loss methods.
+                        Instead, we focus on helping you understand your overall lifestyle. We look at your eating habits,
                         daily routine, physical activity, sleep patterns, and work schedule to better understand your current health.
                     </p>
                     <p className="about__text">
-                        Our goal is to help you build awareness about your body and take control of the choices you make 
+                        Our goal is to help you build awareness about your body and take control of the choices you make
                         around what you eat and how you move, so you can develop sustainable habits that last well beyond the program.
                     </p>
 

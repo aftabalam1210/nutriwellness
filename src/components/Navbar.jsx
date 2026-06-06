@@ -46,14 +46,22 @@ const Navbar = () => {
     return <Link to={to} className={className} onClick={() => setIsOpen(false)}>{children}</Link>;
   };
 
+  const handleLogoClick = (e) => {
+    if (location.pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="container navbar__container">
-        <Link to="/" className="navbar__logo">
+        <Link to="/" className="navbar__logo" onClick={handleLogoClick}>
           <div className="navbar__logo-icon-wrapper">
             <Leaf className="navbar__logo-icon" size={24} />
           </div>
-          <span className="navbar__logo-text">Nutri<span className="highlight">Wellness</span></span>
+          {/* NutriVerse By Shreya */}
+          <span className="navbar__logo-text">Nutri<span className="highlight">Verse By Shreya</span></span>
         </Link>
 
         <button className="navbar__toggle" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">

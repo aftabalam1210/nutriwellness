@@ -1,6 +1,6 @@
 .tdee-section {
     padding: 100px 0;
-    background-image: linear-gradient(rgba(246, 245, 241, 0.8), rgba(246, 245, 241, 0.8)), url('../assets/tgi cal.jpeg');
+    /* background-image: linear-gradient(rgba(246, 245, 241, 0.8), rgba(246, 245, 241, 0.8)), url('../assets/tgi cal.jpeg'); */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -135,8 +135,15 @@
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* TEE Calculator Result Details */
@@ -144,21 +151,25 @@
     text-align: left;
     width: 100%;
 }
+
 .tee-result-header {
     text-align: center;
     border-bottom: 2px solid rgba(0, 0, 0, 0.05);
     padding-bottom: 1.5rem;
     margin-bottom: 1.5rem;
 }
+
 .tee-result-header .tdee-value {
     color: var(--color-primary);
     font-size: 4rem;
 }
+
 .tee-breakdown {
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
 }
+
 .tee-breakdown h4 {
     margin: 0;
     font-size: 1.1rem;
@@ -166,6 +177,7 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     padding-bottom: 0.3rem;
 }
+
 .formula-box {
     background: var(--color-accent);
     color: var(--color-primary);
@@ -176,21 +188,25 @@
     font-size: 1.1rem;
     margin: 0.3rem 0;
 }
+
 .tee-row {
     display: flex;
     justify-content: space-between;
     font-size: 0.95rem;
     color: var(--color-text);
 }
+
 .tee-row strong {
     color: var(--color-dark);
 }
+
 .tee-total-row {
     border-top: 1px dashed rgba(0, 0, 0, 0.1);
     padding-top: 0.8rem;
     margin-top: 0.4rem;
     font-weight: 700;
 }
+
 .tee-note {
     font-size: 0.8rem;
     color: var(--color-text-light);

@@ -46,10 +46,10 @@ const Contact = () => {
     ];
 
     const plans = [
-        { value: 'one-time', label: 'One-time Consultation (₹600)' },
-        { value: '1-month', label: '1 Month Program (₹3,000)' },
-        { value: '3-months', label: '3 Months Program (₹9,000)' },
-        { value: '6-months', label: '6 Months Program (₹18,000)' },
+        { value: 'one-time', label: 'One-time Consultation (₹600 / रू 800)' },
+        { value: '1-month', label: '1 Month Program (₹3,000 / रू 4,000)' },
+        { value: '3-months', label: '3 Months Program (₹8,000 / रू 11,000)' },
+        { value: '6-months', label: '6 Months Program (₹16,500 / रू 22,500)' },
         { value: 'undecided', label: 'General / Undecided' }
     ];
 
@@ -150,14 +150,15 @@ const Contact = () => {
                             <div className="icon-box"><MessageCircle size={20} /></div>
                             <div>
                                 <h3>WhatsApp Us</h3>
-                                <p>+977 9823355934</p>
+                                <p>+977 9823355934 </p>
+                                <p>+91 9034474640</p>
                             </div>
                         </div>
                         <div className="contact__item">
                             <div className="icon-box"><Mail size={20} /></div>
                             <div>
                                 <h3>Email</h3>
-                                <p>hello@nutriwellness.com</p>
+                                <p>hello@nutriversebyshreya.com</p>
                             </div>
                         </div>
                         <div className="contact__item">
@@ -213,9 +214,9 @@ const Contact = () => {
                         }}>
                             Your consultation request has been successfully received. We will review your details and reach out to you via Phone/WhatsApp within 24 hours.
                         </p>
-                        <button 
+                        <button
                             type="button"
-                            className="btn btn-primary" 
+                            className="btn btn-primary"
                             style={{ marginTop: '1rem' }}
                             onClick={() => {
                                 setIsSubmitted(false);

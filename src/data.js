@@ -100,96 +100,96 @@ export const recipes = [
             "Serve immediately."
         ]
     },
-    {
-        id: 3,
-        title: "Herb Grilled Chicken Bowl",
-        isVeg: false,
-        // Using a high quality grilled chicken bowl image
-        image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=800",
-        time: "25 min",
-        cal: "420 kcal",
-        category: "Dinner",
-        url: "#",
-        description: "Tender grilled chicken breast seasoned with aromatic herbs, served alongside roasted vegetables and a side of light lemon-herb vinaigrette.",
-        nutrition: {
-            energy: "420.0 kcal",
-            carbohydrates: "12.0 g",
-            protein: "38.0 g",
-            fat: "10.0 g",
-            calcium: "60.0 mg"
-        },
-        ingredients: [
-            {
-                section: "For the base",
-                items: [
-                    "150g Chicken Breast, skinless",
-                    "1/2 cup Broccoli florets",
-                    "1/2 cup Bell peppers, sliced",
-                    "1 tsp Olive oil",
-                    "Mixed herbs (Oregano, Thyme)"
-                ]
-            },
-            {
-                section: "For Marinade",
-                items: [
-                    "1 tbsp Lemon juice",
-                    "1 clove Garlic, minced",
-                    "1/2 tsp Black pepper",
-                    "1/2 tsp Salt"
-                ]
-            }
-        ],
-        instructions: [
-            "Clean and score the chicken breast, then marinate with lemon juice, garlic, mixed herbs, salt, and pepper for 15 minutes.",
-            "Heat olive oil in a grill pan over medium heat.",
-            "Grill the chicken for 6-7 minutes on each side until fully cooked and juices run clear.",
-            "In the same pan, toss broccoli and bell peppers, sautéing for 3-4 minutes until tender-crisp.",
-            "Slice the grilled chicken and serve in a bowl alongside the sautéed vegetables.",
-            "Drizzle with remaining lemon juice and serve warm."
-        ]
-    }
+    //{
+    //     id: 3,
+    //     title: "Herb Grilled Chicken Bowl",
+    //     isVeg: false,
+    //     // Using a high quality grilled chicken bowl image
+    //     image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=800",
+    //     time: "25 min",
+    //     cal: "420 kcal",
+    //     category: "Dinner",
+    //     url: "#",
+    //     description: "Tender grilled chicken breast seasoned with aromatic herbs, served alongside roasted vegetables and a side of light lemon-herb vinaigrette.",
+    //     nutrition: {
+    //         energy: "420.0 kcal",
+    //         carbohydrates: "12.0 g",
+    //         protein: "38.0 g",
+    //         fat: "10.0 g",
+    //         calcium: "60.0 mg"
+    //     },
+    //     ingredients: [
+    //         {
+    //             section: "For the base",
+    //             items: [
+    //                 "150g Chicken Breast, skinless",
+    //                 "1/2 cup Broccoli florets",
+    //                 "1/2 cup Bell peppers, sliced",
+    //                 "1 tsp Olive oil",
+    //                 "Mixed herbs (Oregano, Thyme)"
+    //             ]
+    //         },
+    //         {
+    //             section: "For Marinade",
+    //             items: [
+    //                 "1 tbsp Lemon juice",
+    //                 "1 clove Garlic, minced",
+    //                 "1/2 tsp Black pepper",
+    //                 "1/2 tsp Salt"
+    //             ]
+    //         }
+    //     ],
+    //     instructions: [
+    //         "Clean and score the chicken breast, then marinate with lemon juice, garlic, mixed herbs, salt, and pepper for 15 minutes.",
+    //         "Heat olive oil in a grill pan over medium heat.",
+    //         "Grill the chicken for 6-7 minutes on each side until fully cooked and juices run clear.",
+    //         "In the same pan, toss broccoli and bell peppers, sautéing for 3-4 minutes until tender-crisp.",
+    //         "Slice the grilled chicken and serve in a bowl alongside the sautéed vegetables.",
+    //         "Drizzle with remaining lemon juice and serve warm."
+    //     ]
+    //}
 ];
 
 export const blogPosts = [
-    {
-        id: 1,
-        title: "Top 10 Superfoods for Immunity",
-        excerpt: "Discover the power ingredients that can help boost your immune system naturally this season.",
-        date: "Oct 12, 2023",
-        image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&q=80&w=800",
-        fullContent: [
-            "As the seasons change, our immune systems can take a hit. Incorporating the right foods into your diet can make a significant difference in how your body fights off illnesses.",
-            "Start with citrus fruits like oranges, grapefruits, and lemons. They are packed with Vitamin C, which is essential for white blood cell production.",
-            "Don't overlook garlic and ginger. These potent ingredients have been used for centuries to combat sickness and reduce inflammation.",
-            "Finally, adding fermented foods like yogurt or kimchi can improve your gut health, which is surprisingly linked to overall immunity."
-        ]
-    },
-    {
-        id: 2,
-        title: "Mindful Eating: A Beginner's Guide",
-        excerpt: "Learn how to build a better relationship with food by practicing mindfulness during meals.",
-        date: "Sep 28, 2023",
-        image: "https://images.unsplash.com/photo-1511690656952-34342d5c71df?auto=format&fit=crop&q=80&w=800",
-        fullContent: [
-            "Mindful eating is not a diet; it's a practice of being fully present during your meals. In our fast-paced world, we often eat while distracted by phones or TV.",
-            "To start, try eating without any screens. Focus on the colors, textures, and aromas of your food.",
-            "Chew slowly and appreciate each bite. This not only enhances the flavor but also gives your brain time to register fullness signals.",
-            "By slowing down, you may find you enjoy your food more and naturally eat in better alignment with your body's needs."
-        ]
-    },
-    {
-        id: 3,
-        title: "The Truth About Intermittent Fasting",
-        excerpt: "Breaking down the science, benefits, and myths surrounding this popular diet trend.",
-        date: "Sep 15, 2023",
-        image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=800",
-        fullContent: [
-            "Intermittent fasting (IF) has gained massive popularity, but what exactly is it? Simply put, it's an eating pattern that cycles between periods of fasting and eating.",
-            "Common methods include the 16/8 method (fasting for 16 hours, eating for 8) or the 5:2 diet.",
-            "Supporters claim it aids in weight loss, improves metabolic health, and even extends lifespan. However, it's not for everyone.",
-            "It's crucial to consult with a professional before starting IF, especially for women or those with a history of disordered eating."
-        ]
-    }
+    // {
+    //     id: 1,
+    //     title: "Top 10 Superfoods for Immunity",
+    //     excerpt: "Discover the power ingredients that can help boost your immune system naturally this season.",
+    //     date: "Oct 12, 2023",
+    //     image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&q=80&w=800",
+    //     fullContent: [
+    //         "As the seasons change, our immune systems can take a hit. Incorporating the right foods into your diet can make a significant difference in how your body fights off illnesses.",
+    //         "Start with citrus fruits like oranges, grapefruits, and lemons. They are packed with Vitamin C, which is essential for white blood cell production.",
+    //         "Don't overlook garlic and ginger. These potent ingredients have been used for centuries to combat sickness and reduce inflammation.",
+    //         "Finally, adding fermented foods like yogurt or kimchi can improve your gut health, which is surprisingly linked to overall immunity."
+    //     ]
+    // },
+    // {
+    //     id: 2,
+    //     title: "Mindful Eating: A Beginner's Guide",
+    //     excerpt: "Learn how to build a better relationship with food by practicing mindfulness during meals.",
+    //     date: "Sep 28, 2023",
+    //     image: "https://images.unsplash.com/photo-1511690656952-34342d5c71df?auto=format&fit=crop&q=80&w=800",
+    //     fullContent: [
+    //         "Mindful eating is not a diet; it's a practice of being fully present during your meals. In our fast-paced world, we often eat while distracted by phones or TV.",
+    //         "To start, try eating without any screens. Focus on the colors, textures, and aromas of your food.",
+    //         "Chew slowly and appreciate each bite. This not only enhances the flavor but also gives your brain time to register fullness signals.",
+    //         "By slowing down, you may find you enjoy your food more and naturally eat in better alignment with your body's needs."
+    //     ]
+    // },
+    // {
+    //     id: 3,
+    //     title: "The Truth About Intermittent Fasting",
+    //     excerpt: "Breaking down the science, benefits, and myths surrounding this popular diet trend.",
+    //     date: "Sep 15, 2023",
+    //     image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=800",
+    //     fullContent: [
+    //         "Intermittent fasting (IF) has gained massive popularity, but what exactly is it? Simply put, it's an eating pattern that cycles between periods of fasting and eating.",
+    //         "Common methods include the 16/8 method (fasting for 16 hours, eating for 8) or the 5:2 diet.",
+    //         "Supporters claim it aids in weight loss, improves metabolic health, and even extends lifespan. However, it's not for everyone.",
+    //         "It's crucial to consult with a professional before starting IF, especially for women or those with a history of disordered eating."
+    //     ]
+    // }
 ];
 
 export const testimonials = [
@@ -207,27 +207,27 @@ export const testimonials = [
         role: "Weight Loss",
         image: "https://ui-avatars.com/api/?name=Keshav&background=random"
     },
-    {
-        id: 1,
-        name: "Sarah Jenkins",
-        text: "I've tried so many diets, but this holistic approach was the only thing that stuck. I feel more energetic and balanced than I have in years!",
-        role: "Lost 15 lbs",
-        image: "https://ui-avatars.com/api/?name=Sarah+Jenkins&background=random"
-    },
-    {
-        id: 2,
-        name: "Michael Chen",
-        text: "The personalized meal plans were a game changer. Not only did I reach my goal weight, but my digestion has never been better.",
-        role: "Gut Health Program",
-        image: "https://ui-avatars.com/api/?name=Michael+Chen&background=random"
-    },
-    {
-        id: 3,
-        name: "Emma Wilson",
-        text: "Truly professional guidance. The nutritionist was always available to answer my questions and keep me motivated.",
-        role: "Lifestyle Reset",
-        image: "https://ui-avatars.com/api/?name=Emma+Wilson&background=random"
-    }
+    // {
+    //     id: 1,
+    //     name: "Sarah Jenkins",
+    //     text: "I've tried so many diets, but this holistic approach was the only thing that stuck. I feel more energetic and balanced than I have in years!",
+    //     role: "Lost 15 lbs",
+    //     image: "https://ui-avatars.com/api/?name=Sarah+Jenkins&background=random"
+    // },
+    // {
+    //     id: 2,
+    //     name: "Michael Chen",
+    //     text: "The personalized meal plans were a game changer. Not only did I reach my goal weight, but my digestion has never been better.",
+    //     role: "Gut Health Program",
+    //     image: "https://ui-avatars.com/api/?name=Michael+Chen&background=random"
+    // },
+    // {
+    //     id: 3,
+    //     name: "Emma Wilson",
+    //     text: "Truly professional guidance. The nutritionist was always available to answer my questions and keep me motivated.",
+    //     role: "Lifestyle Reset",
+    //     image: "https://ui-avatars.com/api/?name=Emma+Wilson&background=random"
+    // }
 ];
 
 export const solvedCases = [
@@ -259,17 +259,17 @@ export const solvedCases = [
             { name: "Energy Levels & Vitality", before: "Low / Sluggish", after: "Vibrant / High", status: "Restored" }
         ]
     },
-    {
-        patientName: "Anoop",
-        tagline: "Prediabetes & Cholesterol Management",
-        role: "Insulin Sensitivity & Lipids",
-        quote: "I had tried multiple crash diets but always gained the weight back. Shreya's science-based, holistic approach was eye-opening. Not only did I manage to reverse my prediabetic HbA1c levels, but my cholesterol is finally in the green. I eat fully, feel satisfied, and have more energy than ever before.",
-        easyWords: "Anoop presented with chronic insulin resistance (prediabetes) and hyperlipidemia. He was trapped in a cycle of crash diets. We designed a low-glycemic index, high-fiber clinical diet that stabilized blood sugar, optimized lipid levels, and stimulated long-term insulin sensitivity without restrictive calorie counting.",
-        parameters: [
-            { name: "HbA1c (Blood Sugar)", before: "6.4% (Prediabetic)", after: "5.5% (Healthy)", status: "Prediabetes Reversed" },
-            { name: "Total Cholesterol", before: "240 mg/dL", after: "190 mg/dL", status: "Optimal Range" },
-            { name: "Triglycerides", before: "195 mg/dL", after: "140 mg/dL", status: "Healthy Range" },
-            { name: "Body Weight", before: "78 kg", after: "71 kg", status: "-7 kg Reached" }
-        ]
-    }
+    // {
+    //     patientName: "Anoop",
+    //     tagline: "Prediabetes & Cholesterol Management",
+    //     role: "Insulin Sensitivity & Lipids",
+    //     quote: "I had tried multiple crash diets but always gained the weight back. Shreya's science-based, holistic approach was eye-opening. Not only did I manage to reverse my prediabetic HbA1c levels, but my cholesterol is finally in the green. I eat fully, feel satisfied, and have more energy than ever before.",
+    //     easyWords: "Anoop presented with chronic insulin resistance (prediabetes) and hyperlipidemia. He was trapped in a cycle of crash diets. We designed a low-glycemic index, high-fiber clinical diet that stabilized blood sugar, optimized lipid levels, and stimulated long-term insulin sensitivity without restrictive calorie counting.",
+    //     parameters: [
+    //         { name: "HbA1c (Blood Sugar)", before: "6.4% (Prediabetic)", after: "5.5% (Healthy)", status: "Prediabetes Reversed" },
+    //         { name: "Total Cholesterol", before: "240 mg/dL", after: "190 mg/dL", status: "Optimal Range" },
+    //         { name: "Triglycerides", before: "195 mg/dL", after: "140 mg/dL", status: "Healthy Range" },
+    //         { name: "Body Weight", before: "78 kg", after: "71 kg", status: "-7 kg Reached" }
+    //     ]
+    // }
 ];

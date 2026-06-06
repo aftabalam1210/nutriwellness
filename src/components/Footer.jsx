@@ -10,7 +10,8 @@ const Footer = () => {
                 <div className="footer__brand">
                     <div className="footer__logo">
                         <Heart fill="var(--color-primary)" color="var(--color-primary)" />
-                        <span>NutriWellness</span>
+                        {/* <span>NutriWellness</span> */}
+                        <span>NutriVerse By Shreya</span>
                     </div>
                     <p>Empowering you to live a healthier, happier life through personalized nutrition.</p>
                 </div>
@@ -37,7 +38,7 @@ const Footer = () => {
 
             </div>
             <div className="footer__bottom">
-                <p>&copy; {new Date().getFullYear()} NutriWellness. All rights reserved.</p>
+                <p>&copy; {new Date().getFullYear()} NutriVerse By Shreya. All rights reserved.</p>
             </div>
         </footer>
     );
