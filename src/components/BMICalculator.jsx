@@ -41,7 +41,15 @@ const BMICalculator = () => {
             <div className="container bmi-container" id="bmi">
                 <div className="bmi-content">
                     <h2>BMI Calculator</h2>
-                    <p>Find out your Body Mass Index to understand your health status better.</p>
+                    <p className="bmi-subtitle">Find out your Body Mass Index to understand your health status better.</p>
+                    <ul className="bmi-info-points">
+                        <li className="bmi-info-point">
+                            Body Mass Index (BMI) is a simple screening tool used to estimate whether your body weight falls within a healthy range for your height. It is calculated using your weight and height and helps identify categories such as underweight, healthy weight, overweight, and obesity.
+                        </li>
+                        <li className="bmi-info-point">
+                            BMI is a useful screening tool for assessing weight status, but it does not measure body fat, muscle mass, bone density, or overall health.
+                        </li>
+                    </ul>
 
                     <form className="bmi-form" onSubmit={calculateBMI}>
                         <div className="input-group">

@@ -7,7 +7,7 @@ export const recipes = [
         isVeg: true,
         image: "/assets/moongdal.png",
         time: "15 min",
-        cal: "470 kcal",
+        cal: "469.7 kcal",
         category: "Lunch",
         url: "#",
         description: "A nutrient-packed, high-protein salad featuring sprouted moong dal, fresh paneer, and crunchy vegetables, dressed in a zesty spiced hung curd blend.",
@@ -22,34 +22,36 @@ export const recipes = [
             {
                 section: "For the base",
                 items: [
-                    "30g Moong Dal (soaked overnight / boiled)",
-                    "1 small Onion",
-                    "1 medium Tomato",
-                    "1/2 medium / 1 small Cucumber",
-                    "60g Paneer",
+                    "Moong dal: 60 gram soaked overnight / boiled",
+                    "Onion: 1 small (45 g)",
+                    "Tomato: 1 medium (60g)",
+                    "Cucumber: 1/2 medium / 1 small",
+                    "Paneer: 60 gram",
                     "Coriander leaves",
-                    "30g Bajra Puffs / Rice puffs"
+                    "Bajra Puffs/Rice puffs: 15 gram"
                 ]
             },
             {
                 section: "For Dressing",
                 items: [
-                    "60ml Hung Curd",
-                    "2 cloves Garlic",
-                    "1/2 tsp Red Chilli Powder",
-                    "1/2 tsp Coriander Powder",
-                    "1/2 tsp Black Pepper",
-                    "1/2 tsp Cumin Powder"
+                    "Hung curd: 60 mL curd",
+                    "Garlic: 2 cloves",
+                    "Red chilli powder: 1/2 tsp",
+                    "Coriander: 1/2 tsp",
+                    "Black Pepper: 1/2tsp",
+                    "Cumin powder: 1/2 tsp"
                 ]
             }
         ],
         instructions: [
-            "Soak the moong dal overnight or boil until tender but firm.",
-            "In a large mixing bowl, combine the moong dal, chopped onion, tomato, cucumber, paneer, and puffs.",
-            "For the dressing: In a blender, combine hung curd, garlic, red chilli powder, coriander powder, black pepper, and cumin powder. Blend until smooth.",
-            "Pour the blended dressing over the salad mixture.",
-            "Toss well to ensure everything is evenly coated.",
-            "Garnish with fresh coriander leaves and serve immediately."
+            "Take a bowl",
+            "Add boiled/overnight soaked moong dal",
+            "Add onion, tomato, cucumber, paneer, Puffed Rice as per the quantity mentioned",
+            "Take blender and add, Hung Curd, Garlic, Red chilli powder, Coriander powder, Black pepper, and cumin powder",
+            "Blend it well",
+            "Add the blended mixture to the bowl",
+            "Mix it well",
+            "Garnish it with Coriander leaves"
         ]
     },
     {
@@ -58,7 +60,7 @@ export const recipes = [
         isVeg: true,
         image: "/assets/Chickpea salad.png",
         time: "10 min",
-        cal: "316 kcal",
+        cal: "316.5 kcal",
         category: "Lunch",
         url: "#",
         description: "A refreshing, protein-rich salad mixing boiled chickpeas with crunchy cucumber and a tangy hung curd dressing. Perfect for a quick, healthy meal.",
@@ -73,81 +75,404 @@ export const recipes = [
             {
                 section: "For the base",
                 items: [
-                    "1 medium Cucumber, sliced",
-                    "30g Boiled Chickpeas",
-                    "1 tsp Red Chilli Powder",
-                    "1 tsp Black Pepper Powder",
-                    "1 tsp Rock Salt / Iodised Salt"
+                    "Cucumber: 1 medium",
+                    "Chickpea: 50 grams",
+                    "Red Chilli Powder: 1 tsp",
+                    "Black pepper powder: 1 tsp",
+                    "Rock salt/Iodised Salt: 1tsp"
                 ]
             },
             {
                 section: "For Dressing",
                 items: [
-                    "60ml Hung Curd",
-                    "2 cloves Garlic",
-                    "1/2 tsp Red Chilli Powder"
+                    "Hung curd: 60 mL curd",
+                    "Garlic: 2 cloves",
+                    "Red chilli powder: 1/2 tsp"
                 ]
             }
         ],
         instructions: [
-            "Slice the cucumber into desired shapes.",
-            "In a pan, take a small bowl of boiled chickpeas.",
-            "Add 1 tsp red chilli powder, 1 tsp black pepper, and 1 tsp salt to the chickpeas and mix well (sauté lightly if desired).",
-            "For the dressing: In a blender, combine hung curd, garlic, and 1/2 tsp red chilli powder. Blend until smooth.",
-            "Pour the blended dressing over the seasoned chickpeas.",
-            "Mix everything well.",
-            "Garnish with fresh coriander leaves.",
-            "Serve immediately."
+            "Take a cucumber and slice it.",
+            "In a pan, take 1 small bowl boiled chickpeas",
+            "Add 1tsp red chilli powder, 1 tsp black pepper, 1 tsp rock salt/iodised salt to the pan and mix well",
+            "Take blender and add Hung Curd, Garlic, Red chilli powder",
+            "Add the blended mixture on top of the sautéed chickpeas",
+            "Mix it well",
+            "Garnish it with Coriander leaves",
+            "Serve."
         ]
     },
-    //{
-    //     id: 3,
-    //     title: "Herb Grilled Chicken Bowl",
-    //     isVeg: false,
-    //     // Using a high quality grilled chicken bowl image
-    //     image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=800",
-    //     time: "25 min",
-    //     cal: "420 kcal",
-    //     category: "Dinner",
-    //     url: "#",
-    //     description: "Tender grilled chicken breast seasoned with aromatic herbs, served alongside roasted vegetables and a side of light lemon-herb vinaigrette.",
-    //     nutrition: {
-    //         energy: "420.0 kcal",
-    //         carbohydrates: "12.0 g",
-    //         protein: "38.0 g",
-    //         fat: "10.0 g",
-    //         calcium: "60.0 mg"
-    //     },
-    //     ingredients: [
-    //         {
-    //             section: "For the base",
-    //             items: [
-    //                 "150g Chicken Breast, skinless",
-    //                 "1/2 cup Broccoli florets",
-    //                 "1/2 cup Bell peppers, sliced",
-    //                 "1 tsp Olive oil",
-    //                 "Mixed herbs (Oregano, Thyme)"
-    //             ]
-    //         },
-    //         {
-    //             section: "For Marinade",
-    //             items: [
-    //                 "1 tbsp Lemon juice",
-    //                 "1 clove Garlic, minced",
-    //                 "1/2 tsp Black pepper",
-    //                 "1/2 tsp Salt"
-    //             ]
-    //         }
-    //     ],
-    //     instructions: [
-    //         "Clean and score the chicken breast, then marinate with lemon juice, garlic, mixed herbs, salt, and pepper for 15 minutes.",
-    //         "Heat olive oil in a grill pan over medium heat.",
-    //         "Grill the chicken for 6-7 minutes on each side until fully cooked and juices run clear.",
-    //         "In the same pan, toss broccoli and bell peppers, sautéing for 3-4 minutes until tender-crisp.",
-    //         "Slice the grilled chicken and serve in a bowl alongside the sautéed vegetables.",
-    //         "Drizzle with remaining lemon juice and serve warm."
-    //     ]
-    //}
+    {
+        id: 3,
+        title: "Soya Bowl Salad",
+        isVeg: true,
+        image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=800",
+        time: "15 min",
+        cal: "214.4 kcal",
+        category: "Snacks",
+        url: "#",
+        description: "A low-calorie, high-protein snack combining protein-rich sautéed soya chunks with fresh lettuce and a garlic-yogurt dressing.",
+        nutrition: {
+            energy: "214.4 kcal",
+            carbohydrates: "13.01 g",
+            protein: "16.3 g",
+            fat: "9.5 g",
+            calcium: "325.5 mg"
+        },
+        ingredients: [
+            {
+                section: "For the base",
+                items: [
+                    "Lettuce: 100 grams",
+                    "Sautéed Soya Chunks: 25 grams",
+                    "Oil: 1 tsp / 5 mL",
+                    "Rock salt/Iodised Salt: 1tsp",
+                    "Onion: 1 small / 45 grams",
+                    "Spices (don’t over do)"
+                ]
+            },
+            {
+                section: "For Dressing",
+                items: [
+                    "Hung curd: 80 mL curd",
+                    "Garlic: 2 cloves",
+                    "Red Chilli powder: 1tsp",
+                    "Salt to taste"
+                ]
+            }
+        ],
+        instructions: [
+            "Take a pan, sauté the soya chunks in oil, add spices to it and stir.",
+            "Take lettuce in a bowl, add sautéed soya chunks along with onion.",
+            "Take blender and add Hung Curd, Garlic, Red chilli powder and salt with little water.",
+            "Add the blended mixture on top of the bowl of lettuce and soya chunks.",
+            "Mix it well.",
+            "Serve."
+        ]
+    },
+    {
+        id: 4,
+        title: "Makhana Salad",
+        isVeg: true,
+        image: "https://images.unsplash.com/photo-1601050690597-df056fb4ce78?auto=format&fit=crop&q=80&w=800",
+        time: "10 min",
+        cal: "306 kcal",
+        category: "Snacks",
+        url: "#",
+        description: "A crunchy, satisfying snack made with ghee-roasted makhana and peanuts, mixed with colorful grated carrots, beetroot, and cucumber.",
+        nutrition: {
+            energy: "306 kcal",
+            carbohydrates: "34.25 g",
+            protein: "11.9 g",
+            fat: "11.9 g",
+            calcium: "52.7 mg",
+            fibre: "5.6 g"
+        },
+        ingredients: [
+            {
+                section: "Ingredients",
+                items: [
+                    "Roasted Makhana/Foxnut: 30 grams",
+                    "Raw roasted peanut: 2 tbsp",
+                    "Tomato: 30 g",
+                    "Cucumber: 30 g",
+                    "Grated Carrot: 30 grams",
+                    "Grated Beetroot: 30 grams",
+                    "Cumin Powder: 1tsp",
+                    "Iodised Salt: 1tsp",
+                    "Ghee: 1 tsp ~ 5 g"
+                ]
+            }
+        ],
+        instructions: [
+            "Take a pan, add ghee and roast the makhana and peanuts.",
+            "Grate Carrot.",
+            "Grate Beetroot.",
+            "Chop tomato.",
+            "Chop Cucumber.",
+            "Take a bowl, add all ingredients and mix it well.",
+            "Serve."
+        ]
+    },
+    {
+        id: 5,
+        title: "Quinoa Salad",
+        isVeg: true,
+        image: "https://images.unsplash.com/photo-1505576399279-565b52d4ac71?auto=format&fit=crop&q=80&w=800",
+        time: "20 min",
+        cal: "348.6 kcal",
+        category: "Snacks",
+        url: "#",
+        description: "A fiber-rich quinoa and moong dal salad with grated carrots and boiled beetroot, tossed in a simple olive oil and roasted peanut dressing.",
+        nutrition: {
+            energy: "348.6 kcal",
+            carbohydrates: "21.51 g",
+            protein: "9.1 g",
+            fat: "20.9 g",
+            calcium: "75.1 mg",
+            fibre: "6.01 g"
+        },
+        ingredients: [
+            {
+                section: "For the Base",
+                items: [
+                    "Boiled Quinoa: 15 g",
+                    "Moong dal boiled: 15 g",
+                    "Beetroot boiled: 30 g",
+                    "Carrot: 30 g",
+                    "Onion: 30 g"
+                ]
+            },
+            {
+                section: "For the Dressing",
+                items: [
+                    "Olive Oil / Oil: 1 tbsp",
+                    "Raw roasted peanut: 1 tbsp",
+                    "Salt: 1 tsp"
+                ]
+            }
+        ],
+        instructions: [
+            "Soak moong dal for 1-2 hrs in enough water.",
+            "Boil the Quinoa.",
+            "Slice the carrot, chop the beetroot, and chop the onion.",
+            "Now in a large bowl add the chopped and sliced veggies with cooked quinoa and moong dal.",
+            "Top it with dressing and mix well.",
+            "Serve."
+        ]
+    },
+    {
+        id: 6,
+        title: "Beetroot Salad",
+        isVeg: true,
+        image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&q=80&w=800",
+        time: "15 min",
+        cal: "168.3 kcal",
+        category: "Snacks",
+        url: "#",
+        description: "A creamy and colorful yogurt-based beetroot salad finished with a warm cumin and hing tempering.",
+        nutrition: {
+            energy: "168.3 kcal",
+            carbohydrates: "12.09 g",
+            protein: "10.9 g",
+            fat: "7.9 g",
+            calcium: "216.1 mg"
+        },
+        ingredients: [
+            {
+                section: "For the Base",
+                items: [
+                    "Grated Beetroot: 50 g",
+                    "Yogurt/Curd: 200 g",
+                    "Crushed peanuts: 15 g",
+                    "Salt: 1 tsp",
+                    "Black pepper: 1 tsp",
+                    "Oil: 1tsp",
+                    "Cumin powder: 1 tsp",
+                    "Hing: 1 pinch"
+                ]
+            }
+        ],
+        instructions: [
+            "In a mixing bowl, combine the grated beetroot, yogurt/curd, crushed peanuts, salt, and black pepper.",
+            "Mix well to combine these ingredients.",
+            "Take a pan, heat oil and add cumin seed, and hing. Let them crackle for few seconds.",
+            "Pour the tempering over the mixture of beetroot and mix well."
+        ]
+    },
+    {
+        id: 7,
+        title: "Khakra Salad",
+        isVeg: true,
+        image: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&q=80&w=800",
+        time: "15 min",
+        cal: "565.54 kcal",
+        category: "Snacks",
+        url: "#",
+        description: "An innovative snack combining crunchy broken khakra with boiled sprouts, yogurt, roasted peanuts, and freshly blended coriander chutney.",
+        nutrition: {
+            energy: "565.54 kcal",
+            carbohydrates: "78.3 grams",
+            protein: "24.72 g",
+            fat: "9.49 g",
+            calcium: "382.56 mg"
+        },
+        ingredients: [
+            {
+                section: "Ingredients",
+                items: [
+                    "2 Khakra (take two roti)",
+                    "Boiled sprouts: 50 g",
+                    "Yogurt/curd: 200 g",
+                    "Roasted peanut/groundnut: 10 pieces/1 tablespoon",
+                    "Onion: Small half",
+                    "Coriander: 5-6 leaves",
+                    "Rock salt: 1 tsp",
+                    "Red chilli powder: 1tsp",
+                    "Cumin powder: 1 tsp"
+                ]
+            }
+        ],
+        instructions: [
+            "Break the Khakra into small pieces.",
+            "Add boiled sprouts.",
+            "Whisk the yogurt/curd with some water to make it thinner and pour it over the Khakra and sprouts.",
+            "To it add roasted peanut/groundnut.",
+            "Add chopped onion, rock salt, red chilli powder and cumin powder and mix it.",
+            "Mix well to combine these ingredients.",
+            "For coriander chutney: Take a blender and put coriander leaves to it and pour some water to it and blend it.",
+            "Add this coriander chutney to the bowl."
+        ]
+    },
+    {
+        id: 8,
+        title: "Black Chickpea Salad",
+        isVeg: true,
+        image: "https://images.unsplash.com/photo-1515516969-d4008cc6241a?auto=format&fit=crop&q=80&w=800",
+        time: "15 min",
+        cal: "572.5 kcal",
+        category: "Snacks",
+        url: "#",
+        description: "A powerhouse snack packed with black chana, boiled sprouts, roasted nuts, seeds, and an aromatic mint-yogurt dressing.",
+        nutrition: {
+            energy: "572.5 kcal",
+            carbohydrates: "61.1 grams",
+            protein: "35.8 grams",
+            fat: "15.4 grams",
+            calcium: "360.68 mg"
+        },
+        ingredients: [
+            {
+                section: "For Salad",
+                items: [
+                    "Black Chana: 45 g",
+                    "Boiled sprouts: 50 g",
+                    "Capsicum: 2 fistful",
+                    "Cucumber: 2 fistful",
+                    "Tomato: 1 fistful",
+                    "Onion: 1 fistful",
+                    "Cashew: 5 pieces",
+                    "Almond: 5 pieces",
+                    "Makhana: 2 fistful",
+                    "Pumpkin seed: 10 g",
+                    "Sunflower seed: 10 g"
+                ]
+            },
+            {
+                section: "For Dressing",
+                items: [
+                    "Yogurt/hung curd: 60 g",
+                    "Garlic: 2 cloves",
+                    "Mint leaves: 4-5 leaves",
+                    "Chilli flakes",
+                    "Salt: 1 tsp"
+                ]
+            }
+        ],
+        instructions: [
+            "Take a bowl, add to it cooked black Chana, boiled sprouts, roasted cashew, roasted almond, roasted makhana, roasted pumpkin seed, and roasted sunflower seed.",
+            "Take a blender, add Yogurt/hung curd along with mint leaves, chilli flakes, salt, and garlic.",
+            "Blend it well and add the creamy dressing to the bowl."
+        ]
+    },
+    {
+        id: 9,
+        title: "Horse Gram Salad",
+        isVeg: true,
+        image: "https://images.unsplash.com/photo-1543339308-43e59d6b73a6?auto=format&fit=crop&q=80&w=800",
+        time: "20 min",
+        cal: "296.04 kcal",
+        category: "Snacks",
+        url: "#",
+        description: "A clinical nutrition favorite combining paneer, boiled horse gram, cabbage, and other fresh veggies in a custom mint-lemon-yogurt dressing.",
+        nutrition: {
+            energy: "296.04 kcal",
+            carbohydrates: "29.66 grams",
+            protein: "17.33 grams",
+            fat: "9.38 grams",
+            calcium: "440.83 mg"
+        },
+        ingredients: [
+            {
+                section: "For Salad",
+                items: [
+                    "Paneer: 50 grams",
+                    "Boiled horse gram: 30 grams",
+                    "Capsicum: 2 fistful",
+                    "Cucumber: 2 fistful",
+                    "Tomato: 1 fistful",
+                    "Onion: 1 fistful",
+                    "Purple/green cabbage: 60 grams"
+                ]
+            },
+            {
+                section: "For Dressing",
+                items: [
+                    "Mint leaves: 7-8 strands",
+                    "Garlic: 4 cloves",
+                    "Chilli: 1 tsp",
+                    "Curd: 3 tbsp / 45 mL",
+                    "Black pepper: 1 tsp",
+                    "Lemon juice: 1 tbsp",
+                    "Salt: 1 tsp"
+                ]
+            }
+        ],
+        instructions: [
+            "Take a bowl, add to it paneer, capsicum, cucumber, tomato, onion, cabbage, and boiled horse gram.",
+            "Take a blender, add mint leaves, garlic, chilli, curd, black pepper, lemon juice, and salt.",
+            "Blend it well and add the creamy dressing to the bowl.",
+            "Mix it well and enjoy."
+        ]
+    },
+    {
+        id: 10,
+        title: "Moong Beet Salad",
+        isVeg: true,
+        image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=800",
+        time: "15 min",
+        cal: "218.9 kcal",
+        category: "Snacks",
+        url: "#",
+        description: "A superfood salad combining moong dal, quinoa, and boiled beetroot with a zesty garlic-mint yogurt dressing.",
+        nutrition: {
+            energy: "218.9 kcal",
+            carbohydrates: "34.02 grams",
+            protein: "10.53 grams",
+            fat: "3.07 grams",
+            calcium: "150.22 mg"
+        },
+        ingredients: [
+            {
+                section: "For Salad",
+                items: [
+                    "Moong dal boiled: 20 grams",
+                    "Beetroot boiled: 1/2 piece",
+                    "Quinoa boiled: 20 grams",
+                    "Carrot / cucumber sliced: 1 small piece",
+                    "Onion: 1 small piece"
+                ]
+            },
+            {
+                section: "For Dressing",
+                items: [
+                    "Mint leaves: 7-8 strands",
+                    "Garlic: 4 cloves",
+                    "Chilli: 1 tsp",
+                    "Curd: 3 tbsp",
+                    "Black pepper: 1 tsp",
+                    "Lemon juice: 1 tbsp",
+                    "Salt: 1 tsp"
+                ]
+            }
+        ],
+        instructions: [
+            "Take a bowl, add to it boiled moong dal, boiled quinoa, sliced boiled beetroot, sliced carrot/cucumber, and chopped onion.",
+            "Take a blender, add mint leaves, garlic, chilli, curd, black pepper, lemon juice, and salt.",
+            "Blend it well and add the creamy dressing to the bowl.",
+            "Mix it well and enjoy."
+        ]
+    }
 ];
 
 export const blogPosts = [

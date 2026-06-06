@@ -133,3 +133,24 @@
 .fade-in {
     animation: fadeIn 0.5s ease;
 }
+
+.bmi-subtitle {
+    margin-bottom: 1rem;
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+.bmi-info-points {
+    margin: 1.5rem 0;
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    list-style-type: disc;
+    color: var(--color-text);
+}
+
+.bmi-info-point {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}

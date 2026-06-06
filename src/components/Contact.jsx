@@ -158,14 +158,14 @@ const Contact = () => {
                             <div className="icon-box"><Mail size={20} /></div>
                             <div>
                                 <h3>Email</h3>
-                                <p>hello@nutriversebyshreya.com</p>
+                                <p>nutriversebyshreya@gmail.com</p>
                             </div>
                         </div>
                         <div className="contact__item">
                             <div className="icon-box"><MapPin size={20} /></div>
                             <div>
                                 <h3>Clinic</h3>
-                                <p>123 Wellness Ave, Healthy City, HC 10001</p>
+                                <p>Lalitpur, Nepal</p>
                             </div>
                         </div>
                     </div>

@@ -48,7 +48,8 @@ const plans = [
             "Personalised structured meal plan",
             "Weekly interactions to review & alter plans",
             "Phone, WhatsApp & email support",
-            "Monthly Nutrition Learning Session"
+            "Monthly Nutrition Learning Session",
+            "As a bonus, you'll get a free 30-minute consultation for a family member after your 3-month program ends."
         ],
         planId: "3-months"
     },
@@ -65,7 +66,9 @@ const plans = [
             "Personalised structured meal plan",
             "Weekly interactions to review & alter plans",
             "Phone, WhatsApp & email support",
-            "Monthly Nutrition Learning Session"
+            "Monthly Nutrition Learning Session",
+            "One complementary 30-minute free consultation for a family member",
+            "30-min free consultation for yourself, redeemable within 6 months after the program ends"
         ],
         planId: "6-months"
     }
